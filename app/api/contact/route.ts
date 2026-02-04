@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
     }
 
     const RESEND_API_KEY = process.env.RESEND_API_KEY
-    const CONTACT_EMAIL = "hello@napierlabs.dev"
+    const CONTACT_EMAIL = "napier29rc@aol.com"
 
     if (!RESEND_API_KEY) {
       console.error("RESEND_API_KEY not configured")
@@ -55,7 +55,7 @@ ${message || "No additional details provided"}
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "Napier Labs Inquiry <onboarding@resend.dev>",
+        from: "Inquiry <hello@napierlabs.dev>",
         to: [CONTACT_EMAIL],
         subject: `🔧 New Lead: ${projectType} - ${name}`,
         text: emailContent,
