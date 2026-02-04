@@ -8,9 +8,26 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
-  title: 'Napierlabs.dev | Developer Laboratory',
-  description: 'A premium developer portfolio showcasing innovative projects and cutting-edge development.',
-  generator: 'v0.app',
+  title: 'Napier Labs | Cross-Platform Native Developer & B2B Brand Architect',
+  description: 'Napier Labs is a premier digital forge specializing in iOS & Android native development, B2B brand identity, and AI-driven business solutions. Led by the Vibe-Smith, we bridge the gap between digital code and physical production.',
+  keywords: 'iOS developer, Android developer, vibe coder, B2B branding, Napier Labs, Cyberboss Studios, Next.js developer, AI automation, custom software, digital fabrication',
+  robots: 'index, follow',
+  authors: [{ name: 'Napier Labs' }],
+  creator: 'Napier Labs',
+  publisher: 'Napier Labs',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://napierlabs.dev',
+    siteName: 'Napier Labs',
+    title: 'Napier Labs | Cross-Platform Native Developer & B2B Brand Architect',
+    description: 'Napier Labs is a premier digital forge specializing in iOS & Android native development, B2B brand identity, and AI-driven business solutions. Led by the Vibe-Smith, we bridge the gap between digital code and physical production.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Napier Labs | Cross-Platform Native Developer & B2B Brand Architect',
+    description: 'Napier Labs is a premier digital forge specializing in iOS & Android native development, B2B brand identity, and AI-driven business solutions.',
+  },
   icons: {
     icon: [
       {
