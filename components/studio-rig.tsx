@@ -73,9 +73,8 @@ export function StudioRig() {
         </div>
 
         {/* Stats bar */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-3 gap-4">
           {[
-            { label: "Established", value: "2019" },
             { label: "Focus", value: "Cross-Platform Native Developer (iOS & Android)" },
             { label: "Standard", value: "Pixel Perfect" },
             { label: "Philosophy", value: "Clean Code" },

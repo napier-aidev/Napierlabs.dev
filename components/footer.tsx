@@ -50,7 +50,7 @@ export function Footer() {
 
           {/* Copyright */}
           <p className="text-sm text-muted-foreground font-mono">
-            Napier Labs &copy; 2026 | Protocol: Vibe-Smith | Established in the Forge.
+            Napier Labs | Protocol: Vibe-Smith | Forge of the Digital &amp; Physical.
           </p>
         </div>
       </div>
