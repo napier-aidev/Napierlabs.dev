@@ -3,7 +3,6 @@ import { About } from "@/components/about"
 import { Business } from "@/components/business"
 import { StudioRig } from "@/components/studio-rig"
 import { ProjectVault } from "@/components/project-vault"
-import { VibePlayer } from "@/components/vibe-player"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
@@ -39,8 +38,6 @@ export default function Home() {
         <Footer />
       </main>
 
-      {/* Persistent Vibe Player */}
-      <VibePlayer />
     </div>
   )
 }
