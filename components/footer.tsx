@@ -1,13 +1,6 @@
 "use client"
 
-import { Github, Twitter, Linkedin, Mail, Terminal } from "lucide-react"
-
-const socialLinks = [
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Mail, href: "#", label: "Email" },
-]
+import { Mail, Terminal } from "lucide-react"
 
 export function Footer() {
   return (
@@ -42,18 +35,17 @@ export function Footer() {
             <span className="font-bold text-[#00F5FF]">Napier Labs</span>
           </div>
 
-          {/* Social links */}
+          {/* Contact */}
           <div className="flex items-center gap-4">
-            {socialLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="p-2 rounded-lg glass-card hover:bg-[#00F5FF]/20 transition-colors group"
-                aria-label={link.label}
-              >
-                <link.icon className="w-5 h-5 text-muted-foreground group-hover:text-[#00F5FF] transition-colors" />
-              </a>
-            ))}
+            <a
+              href="mailto:hello@napierlabs.dev"
+              className="p-2 rounded-lg glass-card hover:bg-[#00F5FF]/20 transition-colors group flex items-center gap-2"
+              aria-label="Email"
+            >
+              <Mail className="w-5 h-5 text-muted-foreground group-hover:text-[#00F5FF] transition-colors" />
+              <span className="text-sm text-muted-foreground group-hover:text-[#00F5FF] transition-colors">Email</span>
+            </a>
+            <span className="text-sm text-muted-foreground/60 font-mono">Social channels coming soon</span>
           </div>
 
           {/* Copyright */}
