@@ -16,13 +16,16 @@ export function Hero() {
           <Image
             src="/napier-labs-logo-v2.png"
             alt="Napier Labs - Cross-Platform iOS and Android Developer"
-            width={180}
-            height={180}
+            width={280}
+            height={280}
             priority
             loading="eager"
-            className="h-[140px] md:h-[180px] w-auto logo-pulse mix-blend-screen drop-shadow-[0_0_15px_#00F5FF]"
+            className="h-[220px] md:h-[280px] w-auto logo-pulse mix-blend-screen drop-shadow-[0_0_25px_#00F5FF]"
           />
         </div>
+
+        {/* Spacer for breathing room */}
+        <div className="h-10"></div>
 
         {/* Tagline */}
         <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-3xl mx-auto text-balance">
