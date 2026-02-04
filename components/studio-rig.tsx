@@ -76,7 +76,7 @@ export function StudioRig() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             { label: "Established", value: "2019" },
-            { label: "Focus", value: "Android Native" },
+            { label: "Focus", value: "Cross-Platform Native Developer (iOS & Android)" },
             { label: "Standard", value: "Pixel Perfect" },
             { label: "Philosophy", value: "Clean Code" },
           ].map((stat) => (
@@ -85,6 +85,13 @@ export function StudioRig() {
               <p className="text-xs text-muted-foreground font-mono">{stat.label}</p>
             </div>
           ))}
+        </div>
+
+        {/* Specialization */}
+        <div className="mt-8 glass-card rounded-xl p-6 text-center">
+          <p className="text-muted-foreground text-balance">
+            I specialize in building high-performance, fluid mobile experiences for both ecosystems using modern frameworks like React Native and PWA technologies, ensuring no user is left behind.
+          </p>
         </div>
       </div>
     </section>
