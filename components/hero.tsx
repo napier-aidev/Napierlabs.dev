@@ -1,6 +1,7 @@
 "use client"
 
-import { ArrowDown, Terminal, Sparkles } from "lucide-react"
+import Image from "next/image"
+import { ArrowDown, Sparkles } from "lucide-react"
 
 export function Hero() {
   return (
@@ -9,19 +10,19 @@ export function Hero() {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#00F5FF]/10 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#00F5FF]/5 rounded-full blur-3xl animate-pulse delay-1000" />
       
-      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-        {/* Terminal badge */}
-        <div className="inline-flex items-center gap-2 glass-card rounded-full px-4 py-2 mb-8">
-          <Terminal className="w-4 h-4 text-[#00F5FF]" />
-          <span className="text-sm font-mono text-muted-foreground">~/forge/vibe-smith</span>
-          <span className="w-2 h-2 bg-[#00F5FF] rounded-full animate-pulse" />
+      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col items-center">
+        {/* Hero Logo - Centerpiece */}
+        <div className="mb-10">
+          <Image
+            src="/napier-labs-logo.png"
+            alt="Napier Labs - Cross-Platform iOS and Android Developer"
+            width={180}
+            height={180}
+            priority
+            loading="eager"
+            className="h-[140px] md:h-[180px] w-auto logo-pulse"
+          />
         </div>
-
-        {/* Main heading */}
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6">
-          <span className="text-glow text-[#00F5FF]">NAPIER</span>
-          <span className="text-foreground"> LABS</span>
-        </h1>
 
         {/* Tagline */}
         <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-3xl mx-auto text-balance">
