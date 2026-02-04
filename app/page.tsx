@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Hero } from "@/components/hero"
 import { About } from "@/components/about"
 import { Business } from "@/components/business"
@@ -12,10 +13,14 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 px-4 py-4">
         <div className="max-w-6xl mx-auto">
           <div className="glass-card rounded-full px-6 py-3 flex items-center justify-between">
-            <a href="#" className="flex items-center gap-2">
-              <span className="w-2 h-2 bg-[#00F5FF] rounded-full pulse-glow" />
-              <span className="font-bold text-foreground">Napierlabs</span>
-              <span className="text-muted-foreground">.dev</span>
+            <a href="/" className="flex items-center">
+              <Image
+                src="/napier-labs-logo.png"
+                alt="Napier Labs"
+                width={40}
+                height={40}
+                className="h-10 w-auto drop-shadow-[0_0_10px_#00F5FF] hover:drop-shadow-[0_0_15px_#00F5FF] transition-all"
+              />
             </a>
             <div className="hidden md:flex items-center gap-6">
               <a href="#about" className="text-sm text-muted-foreground hover:text-[#00F5FF] transition-colors">About</a>
