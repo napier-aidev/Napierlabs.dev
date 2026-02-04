@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
     }
 
     const RESEND_API_KEY = process.env.RESEND_API_KEY
-    const CONTACT_EMAIL = "napierlabs@yahoo.com"
+    const CONTACT_EMAIL = "napierlabs.dev@outlook.com"
 
     if (!RESEND_API_KEY) {
       console.error("RESEND_API_KEY not configured")
