@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Mail, Terminal, Send } from "lucide-react"
+import { Mail, Terminal, Send, AlertCircle } from "lucide-react"
 
 export function Footer() {
   const [formData, setFormData] = useState({
@@ -14,11 +14,14 @@ export function Footer() {
     message: ""
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+  const [errorMessage, setErrorMessage] = useState("")
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setSubmitStatus("idle")
+    setErrorMessage("")
     
     try {
       const response = await fetch("/api/contact", {
@@ -27,12 +30,19 @@ export function Footer() {
         body: JSON.stringify(formData)
       })
       
-      if (response.ok) {
-        setIsSubmitted(true)
+      const data = await response.json()
+      
+      if (response.ok && data.success) {
+        setSubmitStatus("success")
         setFormData({ name: "", email: "", company: "", projectType: "", timeline: "", budget: "", message: "" })
+      } else {
+        setSubmitStatus("error")
+        setErrorMessage(data.error || "Failed to send message. Please try again.")
       }
     } catch (error) {
       console.error("Form submission error:", error)
+      setSubmitStatus("error")
+      setErrorMessage("Network error. Please check your connection and try again.")
     } finally {
       setIsSubmitting(false)
     }
@@ -62,16 +72,28 @@ export function Footer() {
             </p>
           </div>
 
-          {isSubmitted ? (
+          {submitStatus === "success" ? (
             <div className="text-center py-12">
               <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[#00F5FF]/20 flex items-center justify-center">
                 <Send className="w-8 h-8 text-[#00F5FF]" />
               </div>
               <h3 className="text-2xl font-bold text-[#00F5FF] text-glow mb-4">Transmission Received.</h3>
               <p className="text-muted-foreground">The Vibe-Smith will review your request shortly.</p>
+              <button
+                onClick={() => setSubmitStatus("idle")}
+                className="mt-8 text-[#00F5FF] font-mono text-sm hover:underline"
+              >
+                Send another inquiry
+              </button>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6">
+              {submitStatus === "error" && (
+                <div className="flex items-center gap-3 p-4 rounded-lg bg-red-500/10 border border-red-500/30">
+                  <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0" />
+                  <p className="text-red-400 text-sm">{errorMessage}</p>
+                </div>
+              )}
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-mono text-[#00F5FF] mb-2">Name *</label>
