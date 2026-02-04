@@ -12,20 +12,17 @@ export function Hero() {
       
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col items-center">
         {/* Hero Logo - Centerpiece */}
-        <div className="mb-10">
+        <div className="mb-[60px]">
           <Image
             src="/napier-labs-logo-v2.png"
             alt="Napier Labs - Cross-Platform iOS and Android Developer"
-            width={280}
-            height={280}
+            width={400}
+            height={400}
             priority
             loading="eager"
-            className="h-[220px] md:h-[280px] w-auto logo-pulse mix-blend-screen drop-shadow-[0_0_25px_#00F5FF]"
+            className="h-[250px] md:h-[400px] w-auto logo-pulse mix-blend-screen drop-shadow-[0_0_40px_#00F5FF]"
           />
         </div>
-
-        {/* Spacer for breathing room */}
-        <div className="h-10"></div>
 
         {/* Tagline */}
         <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-3xl mx-auto text-balance">
