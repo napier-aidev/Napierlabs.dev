@@ -1,19 +1,25 @@
 "use client"
 
-import { Globe, Palette, Cog, Layers } from "lucide-react"
+import { Smartphone, Brain, Globe, Cog, Layers } from "lucide-react"
 
 const services = [
+  {
+    icon: Smartphone,
+    title: "iOS & Android Native Development",
+    description: "High-performance, fluid mobile experiences for both ecosystems using React Native and PWA technologies. No user left behind.",
+    features: ["React Native", "iOS", "Android", "PWA"],
+  },
+  {
+    icon: Brain,
+    title: "B2B Brand Architecture & AI Strategy",
+    description: "Full-scale brand identity, market positioning, and AI-driven strategy for high-impact B2B ventures ready to scale.",
+    features: ["Brand Architecture", "AI Strategy", "Market Positioning"],
+  },
   {
     icon: Globe,
     title: "Web Design & Development",
     description: "I build high-performance, cinematic digital experiences—like this one—using Next.js, AI-driven code, and modern UI/UX principles.",
     features: ["Next.js", "AI-Driven Code", "Modern UI/UX"],
-  },
-  {
-    icon: Palette,
-    title: "Brand Design & Upstarting",
-    description: "Full-scale brand identity, logo design, and market entry strategy for high-impact ventures.",
-    features: ["Brand Identity", "Logo Design", "Market Strategy"],
   },
   {
     icon: Cog,
