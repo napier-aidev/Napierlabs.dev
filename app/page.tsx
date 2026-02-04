@@ -15,11 +15,11 @@ export default function Home() {
           <div className="glass-card rounded-full px-6 py-3 flex items-center justify-between">
             <a href="/" className="flex items-center">
               <Image
-                src="/logo-final.png"
+                src="/napier-labs-logo-v2.png"
                 alt="Napier Labs"
                 width={40}
                 height={40}
-                className="h-10 w-auto drop-shadow-[0_0_10px_#00F5FF] hover:drop-shadow-[0_0_15px_#00F5FF] transition-all"
+                className="h-10 w-auto mix-blend-screen drop-shadow-[0_0_10px_#00F5FF] hover:drop-shadow-[0_0_15px_#00F5FF] transition-all"
               />
             </a>
             <div className="hidden md:flex items-center gap-6">

@@ -14,13 +14,13 @@ export function Hero() {
         {/* Hero Logo - Centerpiece */}
         <div className="mb-10">
           <Image
-            src="/logo-final.png"
+            src="/napier-labs-logo-v2.png"
             alt="Napier Labs - Cross-Platform iOS and Android Developer"
             width={180}
             height={180}
             priority
             loading="eager"
-            className="h-[140px] md:h-[180px] w-auto logo-pulse"
+            className="h-[140px] md:h-[180px] w-auto logo-pulse mix-blend-screen drop-shadow-[0_0_15px_#00F5FF]"
           />
         </div>
 
