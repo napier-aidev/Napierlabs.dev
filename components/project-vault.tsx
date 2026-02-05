@@ -94,7 +94,75 @@ export function ProjectVault() {
           <p className="text-muted-foreground max-w-2xl mx-auto mb-8 text-balance">
             A curated collection of work from the vault. Each project represents a unique challenge conquered.
           </p>
+        </div>
           
+        {/* Power Pair - Dual Leadership */}
+        <div className="grid md:grid-cols-2 gap-6 mb-16">
+          {powerPair.map((venture) => (
+            <div
+              key={venture.id}
+              className="relative glass-card rounded-2xl p-8 overflow-hidden group transition-all duration-500 hover:scale-[1.02]"
+              style={{
+                boxShadow: `0 0 40px ${venture.glowColor}20, inset 0 1px 0 ${venture.glowColor}30`,
+              }}
+            >
+              <div 
+                className={`absolute inset-0 bg-gradient-to-br ${venture.bgGlow} to-transparent opacity-30 group-hover:opacity-50 transition-opacity`}
+              />
+              
+              <div className="relative z-10">
+                <div 
+                  className="w-14 h-14 rounded-xl flex items-center justify-center mb-6"
+                  style={{ backgroundColor: `${venture.glowColor}20` }}
+                >
+                  <venture.icon 
+                    className="w-7 h-7" 
+                    style={{ color: venture.glowColor }}
+                  />
+                </div>
+                
+                <span 
+                  className="text-xs font-mono font-bold tracking-wider mb-2 block"
+                  style={{ color: venture.glowColor }}
+                >
+                  {venture.subtitle.toUpperCase()}
+                </span>
+                
+                <h3 
+                  className="text-2xl md:text-3xl font-bold mb-2 transition-colors"
+                  style={{ color: venture.glowColor }}
+                >
+                  {venture.title}
+                </h3>
+                
+                <p className="text-sm font-mono text-muted-foreground mb-3">
+                  {venture.role}
+                </p>
+                
+                <p className="text-muted-foreground mb-6 text-balance">
+                  {venture.description}
+                </p>
+                
+                <a
+                  href={venture.buttonLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold transition-all duration-300 hover:scale-105"
+                  style={{ 
+                    backgroundColor: venture.glowColor,
+                    color: '#141b2d',
+                    boxShadow: `0 0 20px ${venture.glowColor}50`
+                  }}
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  {venture.buttonText}
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center mb-8">
           {/* Filter tabs */}
           <div className="inline-flex glass-card rounded-lg p-1">
             <button
