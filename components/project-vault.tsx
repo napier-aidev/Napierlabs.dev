@@ -1,19 +1,36 @@
 "use client"
 
 import { useState } from "react"
-import { ExternalLink, Github, Layers, Star } from "lucide-react"
+import { ExternalLink, Github, Layers, Star, Zap, FlaskConical } from "lucide-react"
+
+const powerPair = [
+  {
+    id: "cyberboss",
+    title: "Cyberboss Studios",
+    subtitle: "The Powerhouse",
+    role: "Co-Owner & Creative Lead",
+    description: "High-impact vinyl, merch, and branding solutions for the modern creator.",
+    buttonText: "Visit Studio",
+    buttonLink: "#",
+    icon: Zap,
+    glowColor: "#FF3B3B",
+    bgGlow: "from-[#FF3B3B]/20",
+  },
+  {
+    id: "pixelshrimp",
+    title: "Pixel Shrimp",
+    subtitle: "The Innovation",
+    role: "Founder & Lead Dev",
+    description: "A tech-driven aquarium ecosystem merging SaaS analytics with premium biological conditioners.",
+    buttonText: "Enter the Lab",
+    buttonLink: "https://pixelshrimp.tech",
+    icon: FlaskConical,
+    glowColor: "#00FF7F",
+    bgGlow: "from-[#00FF7F]/20",
+  },
+]
 
 const projects = [
-  {
-    id: 1,
-    title: "Cyberboss Studios",
-    description: "My active partnership in the vinyl and signage industry.",
-    tags: ["Partnership", "Vinyl", "Signage", "Branding"],
-    projectStatus: "active",
-    featured: true,
-    github: "#",
-    live: "#",
-  },
   {
     id: 2,
     title: "Cuesight.ai",
