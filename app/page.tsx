@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Hero } from "@/components/hero"
+import { BrandMission } from "@/components/brand-mission"
 import { About } from "@/components/about"
 import { Business } from "@/components/business"
 import { StudioRig } from "@/components/studio-rig"
@@ -36,6 +37,7 @@ export default function Home() {
       {/* Main content */}
       <main>
         <Hero />
+        <BrandMission />
         <About />
         <Business />
         <StudioRig />
