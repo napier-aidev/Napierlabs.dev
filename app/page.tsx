@@ -28,6 +28,7 @@ export default function Home() {
               <a href="#services" className="text-sm text-muted-foreground hover:text-[#00F5FF] transition-colors">Services</a>
               <a href="#studio" className="text-sm text-muted-foreground hover:text-[#00F5FF] transition-colors">Studio</a>
               <a href="#projects" className="text-sm text-muted-foreground hover:text-[#00F5FF] transition-colors">Projects</a>
+              <a href="/ecosystem" className="text-sm text-muted-foreground hover:text-[#00F5FF] transition-colors">Ecosystem</a>
               <span className="text-sm text-muted-foreground/50 cursor-default group relative">
                 Merch
                 <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs font-mono text-[#00F5FF] opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Coming Soon</span>

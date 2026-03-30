@@ -24,9 +24,14 @@ export function Hero() {
           />
         </div>
 
-        {/* Tagline */}
-        <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-3xl mx-auto text-balance">
-          Architecting AI ecosystems and future reality in the present.
+        {/* Headline */}
+        <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-5 text-balance leading-tight">
+          Where <span className="text-[#00F5FF] text-glow">AI Logic</span> Meets<br className="hidden md:block" /> Professional Manufacturing.
+        </h1>
+
+        {/* Sub-headline */}
+        <p className="text-lg md:text-xl text-muted-foreground mb-4 max-w-2xl mx-auto text-balance">
+          Building a unified ecosystem of AI software and the physical hardware that drives them.
         </p>
 
         {/* Subtitle with glow */}

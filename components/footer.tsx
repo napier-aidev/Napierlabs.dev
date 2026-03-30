@@ -231,7 +231,7 @@ export function Footer() {
 
           {/* Copyright */}
           <p className="text-sm text-muted-foreground font-mono">
-            Napier Labs | Protocol: Vibe-Smith | Forge of the Digital &amp; Physical.
+            Napier Labs | Built with AI. Tested in the Field.
           </p>
         </div>
       </div>
