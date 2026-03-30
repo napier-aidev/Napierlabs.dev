@@ -1,4 +1,4 @@
-import { Monitor, Scissors, ShieldCheck, ArrowLeft, ArrowUpRight, Armchair } from "lucide-react"
+import { Monitor, Scissors, ShieldCheck, ArrowLeft, Armchair, Barcode, Crosshair, Hand, Terminal } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -92,7 +92,7 @@ export default function EcosystemPage() {
           {/* 2026 Roadmap Section */}
           <div className="mb-8">
             <div className="glass-card glow-border rounded-2xl p-8 md:p-12">
-              <div className="mb-10">
+              <div className="mb-8">
                 <span className="text-xs font-mono font-bold text-[#00F5FF] tracking-widest uppercase">
                   Technical Infrastructure Roadmap
                 </span>
@@ -102,6 +102,19 @@ export default function EcosystemPage() {
                 <p className="text-muted-foreground mt-3 max-w-2xl">
                   Purpose-selected hardware engineered for AI training throughput, precision manufacturing, laboratory safety, and adaptive ergonomic workflows — all at production scale.
                 </p>
+              </div>
+
+              {/* Scaling Operational Note */}
+              <div className="mb-10 rounded-xl border border-[#00F5FF]/30 bg-[#00F5FF]/5 px-6 py-5 flex gap-4 items-start">
+                <div className="w-1 self-stretch rounded-full bg-[#00F5FF] shrink-0" />
+                <div>
+                  <span className="text-xs font-mono font-bold text-[#00F5FF] uppercase tracking-widest block mb-2">Operational Note</span>
+                  <p className="text-foreground font-medium leading-relaxed">
+                    This 3.5x scaling trajectory is fundamentally dependent on the synergy between{" "}
+                    <span className="text-[#00F5FF]">Local AI Inference</span> and{" "}
+                    <span className="text-[#00F5FF]">Industrial-Grade Plotting</span>.
+                  </p>
+                </div>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
@@ -199,6 +212,61 @@ export default function EcosystemPage() {
             </div>
           </div>
 
+          {/* Graphtec CE8000-60 Integration Guide */}
+          <div className="mb-8">
+            <div className="rounded-2xl border border-[#00F5FF]/20 overflow-hidden">
+              {/* Header */}
+              <div className="bg-[#00F5FF]/5 border-b border-[#00F5FF]/20 px-8 py-5 flex items-center justify-between">
+                <div>
+                  <span className="text-xs font-mono text-[#00F5FF] uppercase tracking-widest block mb-1">// hardware.integration</span>
+                  <h2 className="text-lg font-bold text-foreground">Graphtec CE8000-60: B2B Integration Guide</h2>
+                </div>
+                <span className="hidden sm:inline-block text-xs font-mono px-3 py-1.5 rounded-full bg-[#00F5FF]/10 text-[#00F5FF] border border-[#00F5FF]/20 whitespace-nowrap">
+                  Vinyl Vision Pro Compatible
+                </span>
+              </div>
+
+              {/* Three integration cards */}
+              <div className="p-8 grid md:grid-cols-3 gap-5">
+                {/* Card 1 */}
+                <div className="rounded-xl border border-[#00F5FF]/15 bg-[#00F5FF]/3 p-6 group hover:border-[#00F5FF]/35 hover:bg-[#00F5FF]/6 transition-all duration-300">
+                  <div className="w-11 h-11 rounded-lg bg-[#00F5FF]/10 flex items-center justify-center mb-4 group-hover:bg-[#00F5FF]/20 transition-colors">
+                    <Barcode className="w-5 h-5 text-[#00F5FF]" />
+                  </div>
+                  <span className="text-xs font-mono text-[#00F5FF]/70 uppercase tracking-wider block mb-2">Workflow 01</span>
+                  <h3 className="text-sm font-bold text-foreground mb-3">Barcode-Driven Workflow</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    Our software generates a unique <span className="text-foreground font-medium">DataLink Barcode</span> for every order. The hardware scans this to pull the correct cut-path automatically — eliminating manual file searching and human error at the machine level.
+                  </p>
+                </div>
+
+                {/* Card 2 */}
+                <div className="rounded-xl border border-[#00F5FF]/15 bg-[#00F5FF]/3 p-6 group hover:border-[#00F5FF]/35 hover:bg-[#00F5FF]/6 transition-all duration-300">
+                  <div className="w-11 h-11 rounded-lg bg-[#00F5FF]/10 flex items-center justify-center mb-4 group-hover:bg-[#00F5FF]/20 transition-colors">
+                    <Crosshair className="w-5 h-5 text-[#00F5FF]" />
+                  </div>
+                  <span className="text-xs font-mono text-[#00F5FF]/70 uppercase tracking-wider block mb-2">Workflow 02</span>
+                  <h3 className="text-sm font-bold text-foreground mb-3">Precision Alignment</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    We utilize the <span className="text-foreground font-medium">ARMS 8.0</span> optical registration system to ensure <span className="text-[#00F5FF] font-semibold">0.1mm accuracy</span> on long-run signage and vehicle graphics — where alignment deviation is visible and costly.
+                  </p>
+                </div>
+
+                {/* Card 3 */}
+                <div className="rounded-xl border border-[#00F5FF]/15 bg-[#00F5FF]/3 p-6 group hover:border-[#00F5FF]/35 hover:bg-[#00F5FF]/6 transition-all duration-300">
+                  <div className="w-11 h-11 rounded-lg bg-[#00F5FF]/10 flex items-center justify-center mb-4 group-hover:bg-[#00F5FF]/20 transition-colors">
+                    <Hand className="w-5 h-5 text-[#00F5FF]" />
+                  </div>
+                  <span className="text-xs font-mono text-[#00F5FF]/70 uppercase tracking-wider block mb-2">Workflow 03</span>
+                  <h3 className="text-sm font-bold text-foreground mb-3">Adaptive Efficiency</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    We leverage <span className="text-foreground font-medium">Media Set Assist</span> and <span className="text-foreground font-medium">Blind-Touch Control</span> as primary vocational accommodations — maintaining high output with minimal physical strain across extended production runs.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Software Alignment note */}
           <div className="glass-card rounded-2xl p-8 mb-8 border border-[#00F5FF]/20">
             <div className="flex items-start gap-4">
@@ -228,11 +296,29 @@ export default function EcosystemPage() {
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto text-balance">
               Every hardware selection is chosen to extend the capability of our AI workflows into the physical world. We don&apos;t just build software — we build the machines that run alongside it.
             </p>
-            <p className="text-[#00F5FF] font-mono text-sm mt-6">Built with AI. Tested in the Field.</p>
           </div>
 
         </div>
       </main>
+
+      {/* Consistent Footer */}
+      <footer className="border-t border-[#00F5FF]/10 px-4 py-8">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-2">
+            <Terminal className="w-5 h-5 text-[#00F5FF]" />
+            <span className="font-bold text-[#00F5FF]">Napier Labs</span>
+          </div>
+          <p className="text-sm text-muted-foreground font-mono">
+            Built with AI. Tested in the Field.
+          </p>
+          <Link
+            href="/#contact"
+            className="text-sm text-muted-foreground hover:text-[#00F5FF] transition-colors font-mono"
+          >
+            hello@napierlabs.dev
+          </Link>
+        </div>
+      </footer>
     </div>
   )
 }
