@@ -1,7 +1,42 @@
 "use client"
 
-import { useState } from "react"
-import { ExternalLink, Github, Layers, Star, Zap, FlaskConical } from "lucide-react"
+import { ExternalLink, Zap, FlaskConical, CheckCircle, Clock, Wrench } from "lucide-react"
+
+const flagship = [
+  {
+    id: "garage-door",
+    title: "Garage Door Sales Pro",
+    headline: "Custom Enterprise Sales Solution",
+    description:
+      "A fully deployed, active sales application built for the garage door industry. Streamlines client quoting, order management, and field sales logic.",
+    status: "LIVE / PRODUCTION",
+    statusVariant: "live",
+    achievement: "Developed and deployed using AI-first 'Vibe Coding' methodology.",
+    tags: ["Enterprise Sales", "Field Operations", "Quoting Engine", "Order Management"],
+  },
+  {
+    id: "vinyl-vision",
+    title: "Vinyl Vision Pro",
+    headline: "B2B Manufacturing & Scaling Suite",
+    description:
+      "An AI-powered management platform designed to scale vinyl operations by 3.5x. Features include automated B2B quoting and Graphtec-integrated cut-path logic.",
+    status: "INTERNAL BETA — Q2 2026",
+    statusVariant: "beta",
+    achievement: null,
+    tags: ["AI Manufacturing", "Graphtec Integration", "B2B Quoting", "Cut-Path Logic"],
+  },
+  {
+    id: "napier-lab-customz",
+    title: "Napier Lab Customz",
+    headline: "Hybrid Manufacturing & Design Hub",
+    description:
+      "The production center for 'Signature Series' lures and custom cues. Merges AI-generated aesthetics with high-fidelity physical airbrushing.",
+    status: "ACTIVE PRODUCTION",
+    statusVariant: "active",
+    achievement: null,
+    tags: ["Signature Series", "AI Aesthetics", "Airbrushing", "Custom Manufacturing"],
+  },
+]
 
 const powerPair = [
   {
@@ -21,7 +56,8 @@ const powerPair = [
     title: "Pixel Shrimp",
     subtitle: "The Innovation",
     role: "Founder & Lead Dev",
-    description: "A tech-driven aquarium ecosystem merging SaaS analytics with premium biological conditioners.",
+    description:
+      "A tech-driven aquarium ecosystem merging SaaS analytics with premium biological conditioners.",
     buttonText: "Enter the Lab",
     buttonLink: "https://pixelshrimp.tech",
     icon: FlaskConical,
@@ -30,128 +66,173 @@ const powerPair = [
   },
 ]
 
-const projects = [
-  {
-    id: 2,
-    title: "Cuesight.ai",
-    description: "Advanced analytics and computer vision tracking for the billiards community.",
-    tags: ["AI Analytics", "Computer Vision", "Billiards", "Sports Tech"],
-    projectStatus: "construction",
-    featured: true,
-    github: "#",
-    live: "#",
+const statusConfig: Record<string, { icon: React.ElementType; color: string; bg: string }> = {
+  live: {
+    icon: CheckCircle,
+    color: "#00F5FF",
+    bg: "bg-[#00F5FF]/10 text-[#00F5FF]",
   },
-  {
-    id: 3,
-    title: "Pixel Lab",
-    description: "AI command center for modern aquarists.",
-    tags: ["AI", "Agentic Systems", "React", "Supabase"],
-    projectStatus: "construction",
-    featured: true,
-    github: "#",
-    live: "#",
+  beta: {
+    icon: Clock,
+    color: "#FF9500",
+    bg: "bg-[#FF9500]/10 text-[#FF9500]",
   },
-  {
-    id: 4,
-    title: "Vinyl Vision Pro",
-    description: "Proprietary AI tool for material scaling at Cyberboss Studios.",
-    tags: ["Computer Vision", "AI", "Internal Tool", "Material Tracking"],
-    projectStatus: "construction",
-    featured: true,
-    github: "#",
-    live: "#",
+  active: {
+    icon: Wrench,
+    color: "#00FF7F",
+    bg: "bg-[#00FF7F]/10 text-[#00FF7F]",
   },
-  {
-    id: 5,
-    title: "Home Improvement Workflow App",
-    description: "Custom B2B solution for automated project management.",
-    tags: ["B2B", "Invoice Automation", "Workflow", "Industry Solution"],
-    projectStatus: "construction",
-    featured: true,
-    github: "#",
-    live: "#",
-  },
-]
+}
 
 export function ProjectVault() {
-  const [filter, setFilter] = useState<"all" | "featured">("all")
-  
-  const filteredProjects = filter === "featured" 
-    ? projects.filter(p => p.featured) 
-    : projects
-
   return (
     <section id="projects" className="py-32 px-4">
       <div className="max-w-6xl mx-auto">
+
         {/* Section header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <span className="text-[#00F5FF] font-mono text-sm mb-4 block">// project.vault</span>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-glow text-[#00F5FF]">{"{"}</span>
             <span className="text-foreground"> Projects </span>
             <span className="text-glow text-[#00F5FF]">{"}"}</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto mb-8 text-balance">
-            A curated collection of work from the vault. Each project represents a unique challenge conquered.
+          <p className="text-muted-foreground max-w-2xl mx-auto text-balance">
+            High-impact builds spanning enterprise software, AI manufacturing, and physical production.
           </p>
         </div>
-          
-        {/* Power Pair - Dual Leadership */}
-        <div className="grid md:grid-cols-2 gap-6 mb-16">
+
+        {/* Flagship 3 — Primary Grid */}
+        <div className="grid md:grid-cols-3 gap-6 mb-6">
+          {flagship.map((project) => {
+            const status = statusConfig[project.statusVariant]
+            const StatusIcon = status.icon
+            return (
+              <div
+                key={project.id}
+                className="glass-card rounded-2xl p-7 flex flex-col group transition-all duration-300 hover:scale-[1.02] relative overflow-hidden"
+                style={{
+                  boxShadow: `0 0 30px ${status.color}15`,
+                  borderColor: `${status.color}25`,
+                }}
+              >
+                {/* Subtle glow overlay on hover */}
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"
+                  style={{
+                    background: `radial-gradient(ellipse at top left, ${status.color}08 0%, transparent 70%)`,
+                  }}
+                />
+
+                <div className="relative z-10 flex flex-col h-full">
+                  {/* Status badge */}
+                  <div className="mb-5">
+                    <span
+                      className={`inline-flex items-center gap-1.5 text-xs font-mono font-bold px-3 py-1.5 rounded-full ${status.bg}`}
+                    >
+                      <StatusIcon className="w-3 h-3" />
+                      {project.status}
+                    </span>
+                  </div>
+
+                  {/* Title & Headline */}
+                  <h3
+                    className="text-xl font-bold mb-1 transition-colors group-hover:text-[#00F5FF]"
+                    style={{ color: "var(--foreground)" }}
+                  >
+                    {project.title}
+                  </h3>
+                  <p className="text-xs font-mono text-muted-foreground/70 uppercase tracking-widest mb-4">
+                    {project.headline}
+                  </p>
+
+                  {/* Description */}
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">
+                    {project.description}
+                  </p>
+
+                  {/* Achievement callout */}
+                  {project.achievement && (
+                    <div className="mb-5 px-4 py-3 rounded-lg border border-[#00F5FF]/20 bg-[#00F5FF]/5">
+                      <p className="text-xs font-mono text-[#00F5FF] leading-relaxed">
+                        ✦ {project.achievement}
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-xs font-mono px-2 py-1 rounded bg-white/5 text-muted-foreground"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+
+        {/* Divider */}
+        <div className="flex items-center gap-4 my-14">
+          <div className="flex-1 h-px bg-[#00F5FF]/10" />
+          <span className="text-xs font-mono text-muted-foreground/50 uppercase tracking-widest">Venture Leadership</span>
+          <div className="flex-1 h-px bg-[#00F5FF]/10" />
+        </div>
+
+        {/* Power Pair — Dual Leadership */}
+        <div className="grid md:grid-cols-2 gap-6">
           {powerPair.map((venture) => (
             <div
               key={venture.id}
               className="relative glass-card rounded-2xl p-8 overflow-hidden group transition-all duration-500 hover:scale-[1.02]"
               style={{
-                boxShadow: `0 0 40px ${venture.glowColor}20, inset 0 1px 0 ${venture.glowColor}30`,
+                boxShadow: `0 0 40px ${venture.glowColor}15, inset 0 1px 0 ${venture.glowColor}20`,
               }}
             >
-              <div 
-                className={`absolute inset-0 bg-gradient-to-br ${venture.bgGlow} to-transparent opacity-30 group-hover:opacity-50 transition-opacity`}
+              <div
+                className={`absolute inset-0 bg-gradient-to-br ${venture.bgGlow} to-transparent opacity-20 group-hover:opacity-40 transition-opacity`}
               />
-              
+
               <div className="relative z-10">
-                <div 
+                <div
                   className="w-14 h-14 rounded-xl flex items-center justify-center mb-6"
-                  style={{ backgroundColor: `${venture.glowColor}20` }}
+                  style={{ backgroundColor: `${venture.glowColor}15` }}
                 >
-                  <venture.icon 
-                    className="w-7 h-7" 
-                    style={{ color: venture.glowColor }}
-                  />
+                  <venture.icon className="w-7 h-7" style={{ color: venture.glowColor }} />
                 </div>
-                
-                <span 
+
+                <span
                   className="text-xs font-mono font-bold tracking-wider mb-2 block"
                   style={{ color: venture.glowColor }}
                 >
                   {venture.subtitle.toUpperCase()}
                 </span>
-                
-                <h3 
-                  className="text-2xl md:text-3xl font-bold mb-2 transition-colors"
+
+                <h3
+                  className="text-2xl md:text-3xl font-bold mb-2"
                   style={{ color: venture.glowColor }}
                 >
                   {venture.title}
                 </h3>
-                
-                <p className="text-sm font-mono text-muted-foreground mb-3">
-                  {venture.role}
-                </p>
-                
-                <p className="text-muted-foreground mb-6 text-balance">
-                  {venture.description}
-                </p>
-                
+
+                <p className="text-sm font-mono text-muted-foreground mb-3">{venture.role}</p>
+
+                <p className="text-muted-foreground mb-6 text-balance">{venture.description}</p>
+
                 <a
                   href={venture.buttonLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold transition-all duration-300 hover:scale-105"
-                  style={{ 
+                  style={{
                     backgroundColor: venture.glowColor,
-                    color: '#141b2d',
-                    boxShadow: `0 0 20px ${venture.glowColor}50`
+                    color: "#141b2d",
+                    boxShadow: `0 0 20px ${venture.glowColor}40`,
                   }}
                 >
                   <ExternalLink className="w-4 h-4" />
@@ -162,106 +243,6 @@ export function ProjectVault() {
           ))}
         </div>
 
-        <div className="text-center mb-8">
-          {/* Filter tabs */}
-          <div className="inline-flex glass-card rounded-lg p-1">
-            <button
-              onClick={() => setFilter("all")}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
-                filter === "all" 
-                  ? "bg-[#00F5FF] text-[#141b2d]" 
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              <Layers className="w-4 h-4 inline mr-2" />
-              All Projects
-            </button>
-            <button
-              onClick={() => setFilter("featured")}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
-                filter === "featured" 
-                  ? "bg-[#00F5FF] text-[#141b2d]" 
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              <Star className="w-4 h-4 inline mr-2" />
-              Featured
-            </button>
-          </div>
-        </div>
-
-        {/* Projects grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project) => (
-            <div
-              key={project.id}
-              className="glass-card glass-card-hover rounded-xl overflow-hidden transition-all duration-300 group relative"
-            >
-              {/* Status Badge */}
-              <div className="absolute top-3 right-3 z-10">
-                {project.projectStatus === "active" ? (
-                  <span className="text-xs font-bold font-mono px-2 py-1 rounded bg-[#00F5FF]/20 text-[#00F5FF] text-glow-sm">
-                    LIVE
-                  </span>
-                ) : (
-                  <span className="text-xs font-bold font-mono px-2 py-1 rounded bg-[#FF4D00]/20 text-[#FF4D00] pulse-amber">
-                    COMING SOON
-                  </span>
-                )}
-              </div>
-              
-              {/* Project header with status */}
-              <div className="p-6 pb-0">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center gap-2">
-                    {project.featured && (
-                      <Star className="w-4 h-4 text-[#00F5FF] fill-[#00F5FF]" />
-                    )}
-                  </div>
-                  <div className="flex gap-2">
-                    <a
-                      href={project.github}
-                      className="p-2 rounded-lg bg-secondary/50 hover:bg-[#00F5FF]/20 transition-colors"
-                      aria-label="View source code"
-                    >
-                      <Github className="w-4 h-4 text-muted-foreground hover:text-[#00F5FF]" />
-                    </a>
-                    {project.live && (
-                      <a
-                        href={project.live}
-                        className="p-2 rounded-lg bg-secondary/50 hover:bg-[#00F5FF]/20 transition-colors"
-                        aria-label="View live site"
-                      >
-                        <ExternalLink className="w-4 h-4 text-muted-foreground hover:text-[#00F5FF]" />
-                      </a>
-                    )}
-                  </div>
-                </div>
-                
-                <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-[#00F5FF] transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  {project.description}
-                </p>
-              </div>
-              
-              {/* Tags */}
-              <div className="p-6 pt-0">
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs font-mono px-2 py-1 rounded bg-[#00F5FF]/10 text-[#00F5FF]/80"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   )
