@@ -1,4 +1,4 @@
-import { Monitor, Scissors, ShieldCheck, ArrowLeft, Armchair, Barcode, Crosshair, Hand, Terminal } from "lucide-react"
+import { Monitor, Scissors, ShieldCheck, ArrowLeft, Armchair, Barcode, Crosshair, Hand, Terminal, Layers3, Gauge, Wifi, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -209,6 +209,114 @@ export default function EcosystemPage() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Prusa XL Technical Audit */}
+          <div className="mb-8">
+            <div className="rounded-2xl border border-[#00F5FF]/20 overflow-hidden">
+
+              {/* Audit header */}
+              <div className="bg-[#00F5FF]/5 border-b border-[#00F5FF]/20 px-8 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div className="flex items-center gap-4">
+                  {/* Prusa-style placeholder icon */}
+                  <div className="w-12 h-12 rounded-xl bg-[#00F5FF]/10 border border-[#00F5FF]/20 flex items-center justify-center shrink-0">
+                    <svg viewBox="0 0 24 24" className="w-7 h-7 text-[#00F5FF]" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                      <path d="M2 17l10 5 10-5" />
+                      <path d="M2 12l10 5 10-5" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="text-xs font-mono text-[#00F5FF] uppercase tracking-widest block mb-1">// technical.audit — additive.manufacturing</span>
+                    <h2 className="text-lg font-bold text-foreground">Prusa XL 5-Toolhead System — Additive Manufacturing Audit</h2>
+                  </div>
+                </div>
+                <span className="hidden sm:inline-block text-xs font-mono px-3 py-1.5 rounded-full bg-[#00FF7F]/10 text-[#00FF7F] border border-[#00FF7F]/20 whitespace-nowrap shrink-0">
+                  2026 Roadmap
+                </span>
+              </div>
+
+              {/* Audit rows */}
+              <div className="divide-y divide-[#00F5FF]/10">
+
+                {/* Row 1: Independent Tool-Changing Logic */}
+                <div className="px-8 py-7 grid md:grid-cols-[220px_1fr] gap-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-[#00F5FF]/10 flex items-center justify-center shrink-0 mt-0.5">
+                      <Layers3 className="w-4 h-4 text-[#00F5FF]" />
+                    </div>
+                    <span className="text-xs font-mono font-bold text-[#00F5FF] uppercase tracking-widest leading-relaxed pt-1">Tool-Changing Logic</span>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground mb-2">Independent Tool-Changing Logic</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Automated 5-way material swapping across <span className="text-foreground font-medium">ASA, TPU, and PETG</span> with zero manual intervention. Each toolhead operates on an independent extruder system — eliminating cross-contamination and enabling multi-material builds in a single unattended print session.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Row 2: Load Cell Calibration */}
+                <div className="px-8 py-7 grid md:grid-cols-[220px_1fr] gap-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-[#00F5FF]/10 flex items-center justify-center shrink-0 mt-0.5">
+                      <Gauge className="w-4 h-4 text-[#00F5FF]" />
+                    </div>
+                    <span className="text-xs font-mono font-bold text-[#00F5FF] uppercase tracking-widest leading-relaxed pt-1">Load Cell Calibration</span>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground mb-2">Fully Automated First-Layer Calibration</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Integrated load cell sensors perform automatic first-layer calibration before every print — eliminating manual bed-leveling and thermal drift tuning. Print reliability is enforced at the hardware level, removing a primary source of failed runs and material waste.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Row 3: Industrial Integration */}
+                <div className="px-8 py-7 grid md:grid-cols-[220px_1fr] gap-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-[#00F5FF]/10 flex items-center justify-center shrink-0 mt-0.5">
+                      <Wifi className="w-4 h-4 text-[#00F5FF]" />
+                    </div>
+                    <span className="text-xs font-mono font-bold text-[#00F5FF] uppercase tracking-widest leading-relaxed pt-1">Industrial Integration</span>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground mb-2">Network-Linked G-Code Execution via Prusa Connect</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      G-code files are pushed directly from AI-integrated CAD to the Prusa XL via <span className="text-foreground font-medium">Prusa Connect</span> over the local network — enabling a full <span className="text-[#00F5FF] font-semibold">"Lights-Out" manufacturing cycle</span>. Print jobs queue, execute, and complete without requiring physical presence at the machine.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Vocational Impact callout */}
+                <div className="px-8 py-7 bg-[#00F5FF]/3">
+                  <div className="rounded-xl border border-[#00F5FF]/30 bg-[#00F5FF]/5 px-6 py-5 flex gap-4 items-start">
+                    <div className="w-1 self-stretch rounded-full bg-[#00F5FF] shrink-0" />
+                    <div>
+                      <span className="text-xs font-mono font-bold text-[#00F5FF] uppercase tracking-widest block mb-2">Vocational Impact</span>
+                      <p className="text-sm text-foreground font-medium leading-relaxed">
+                        The Prusa XL serves as a primary automation node, removing{" "}
+                        <span className="text-[#00F5FF] font-bold">98% of the manual dexterity</span>{" "}
+                        required for industrial-grade 3D manufacturing. Tool changes, bed leveling, and file delivery are fully automated — enabling high-volume output from a single adaptive operator.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Synergy link footer */}
+              <div className="border-t border-[#00F5FF]/10 px-8 py-4 flex items-center justify-between bg-[#00F5FF]/2">
+                <span className="text-xs text-muted-foreground font-mono">Additive Manufacturing · Production Node</span>
+                <Link
+                  href="/#projects"
+                  className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-[#00F5FF] hover:text-white transition-colors group"
+                >
+                  See Case Study: Adaptive Construction Tooling
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+
             </div>
           </div>
 
