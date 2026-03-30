@@ -1,4 +1,4 @@
-import { Monitor, Scissors, ShieldCheck, ArrowLeft, Armchair, Barcode, Crosshair, Hand, Terminal, Layers3, Gauge, Wifi, ArrowRight } from "lucide-react"
+import { Monitor, Scissors, ShieldCheck, ArrowLeft, Armchair, Barcode, Crosshair, Hand, Terminal, Layers3, Gauge, Wifi, ArrowRight, Anchor, Navigation, Accessibility, Download, Waves, FlaskConical } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -393,6 +393,138 @@ export default function EcosystemPage() {
                 </p>
               </div>
             </div>
+          </div>
+
+          {/* ─── Adaptive Maritime Partnership: Project 360 ─── */}
+          <div className="glass-card rounded-2xl border border-[#00F5FF]/20 overflow-hidden mb-8">
+
+            {/* Section header */}
+            <div className="bg-[#00F5FF]/6 border-b border-[#00F5FF]/15 px-8 py-6 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+              <div>
+                <span className="text-xs font-mono text-[#00F5FF] uppercase tracking-widest block mb-2">
+                  // 2026.expansion — mobile.lab
+                </span>
+                <h2 className="text-xl md:text-2xl font-bold text-foreground flex items-center gap-3">
+                  <Anchor className="w-6 h-6 text-[#00F5FF] shrink-0" />
+                  Adaptive Maritime Partnership: Project 360
+                </h2>
+                <p className="text-sm text-muted-foreground mt-2 max-w-2xl">
+                  Deploying the Blue Sky 360 Pro as Napier Labs&apos; 2026 Mobile Lab platform — a field-capable production and data collection vessel engineered for hands-free operation.
+                </p>
+              </div>
+              <div className="flex items-center gap-2 shrink-0 self-start mt-1">
+                <span className="text-xs font-mono px-3 py-1.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 whitespace-nowrap">
+                  2026 Expansion
+                </span>
+              </div>
+            </div>
+
+            {/* Three feature panels */}
+            <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#00F5FF]/10">
+
+              {/* Panel 1: The Vessel */}
+              <div className="p-7 flex flex-col gap-4">
+                <div className="w-12 h-12 rounded-xl bg-[#00F5FF]/10 flex items-center justify-center shrink-0">
+                  <Waves className="w-6 h-6 text-[#00F5FF]" />
+                </div>
+                <div>
+                  <span className="text-xs font-mono text-[#00F5FF]/70 uppercase tracking-wider block mb-2">The Vessel</span>
+                  <h3 className="text-base font-bold text-foreground mb-3">Blue Sky 360 Pro</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    The <span className="text-foreground font-semibold">Blue Sky 360 Pro</span> is the target platform for our Mobile Lab expansion — a purpose-built pedal kayak selected for its 360-degree swivel seating architecture, stable hull geometry, and motorized propulsion compatibility. It provides the open deck footprint required to convert a recreational watercraft into a functioning field station.
+                  </p>
+                </div>
+                <div className="mt-auto pt-4 border-t border-[#00F5FF]/10">
+                  <div className="grid grid-cols-2 gap-3">
+                    {[
+                      { label: "Hull Class", value: "Touring / Sit-On-Top" },
+                      { label: "Drive System", value: "Pedal + Motor-Ready" },
+                      { label: "Deck Config", value: "Open — Modifiable" },
+                      { label: "Role", value: "2026 Mobile Lab" },
+                    ].map((stat) => (
+                      <div key={stat.label} className="rounded-lg bg-[#00F5FF]/5 border border-[#00F5FF]/10 px-3 py-2">
+                        <span className="text-[10px] font-mono text-[#00F5FF]/60 uppercase tracking-wider block">{stat.label}</span>
+                        <span className="text-xs font-semibold text-foreground">{stat.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Panel 2: The Modification */}
+              <div className="p-7 flex flex-col gap-4">
+                <div className="w-12 h-12 rounded-xl bg-[#00F5FF]/10 flex items-center justify-center shrink-0">
+                  <Accessibility className="w-6 h-6 text-[#00F5FF]" />
+                </div>
+                <div>
+                  <span className="text-xs font-mono text-[#00F5FF]/70 uppercase tracking-wider block mb-2">The Modification</span>
+                  <h3 className="text-base font-bold text-foreground mb-3">Universal Access Deck</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    The standard seating system is replaced with a <span className="text-foreground font-semibold">wheelchair-secure mounting platform</span> — a custom-fabricated deck insert using ASA-printed rail brackets and structural aluminum struts. The mount provides lateral stability, forward lean support, and anti-tip geometry engineered to ADA transfer zone standards. It enables full <span className="text-[#00F5FF] font-semibold">360-degree fishability</span> for operators with mobility challenges — no transfers, no instability, no limitation.
+                  </p>
+                </div>
+                <div className="mt-auto pt-4 border-t border-[#00F5FF]/10 space-y-2">
+                  {[
+                    "ASA-printed bracket system (Prusa XL fabricated)",
+                    "Lateral anti-tip geometry — ADA-informed design",
+                    "Tool-free modular installation and removal",
+                    "Accommodates standard powerchair footprint",
+                  ].map((item) => (
+                    <div key={item} className="flex items-start gap-2">
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#00F5FF]/60 shrink-0" />
+                      <span className="text-xs text-muted-foreground leading-relaxed">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Panel 3: The Innovation */}
+              <div className="p-7 flex flex-col gap-4">
+                <div className="w-12 h-12 rounded-xl bg-[#00F5FF]/10 flex items-center justify-center shrink-0">
+                  <Navigation className="w-6 h-6 text-[#00F5FF]" />
+                </div>
+                <div>
+                  <span className="text-xs font-mono text-[#00F5FF]/70 uppercase tracking-wider block mb-2">The Innovation</span>
+                  <h3 className="text-base font-bold text-foreground mb-3">Hands-Free Navigation</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    The 360 Pro&apos;s motorized drive integration is configured for <span className="text-[#00F5FF] font-semibold">hands-free navigation</span> — freeing the founder&apos;s upper-body capacity entirely. On-water propulsion is handled by foot pedal or motor autopilot, while hands remain dedicated to <span className="text-foreground font-semibold">real-time data collection</span>, product field-testing, and AI-assisted logging via tablet. The Mobile Lab becomes a functional R&amp;D platform — not a recreational vessel.
+                  </p>
+                </div>
+                <div className="mt-auto pt-4 border-t border-[#00F5FF]/10 space-y-2">
+                  {[
+                    "Motor autopilot frees hands for R&D data entry",
+                    "AI-assisted field logging via mounted tablet",
+                    "Product testing in real-world aquatic conditions",
+                    "Adaptive Construction Gear field validation platform",
+                  ].map((item) => (
+                    <div key={item} className="flex items-start gap-2">
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#00F5FF]/60 shrink-0" />
+                      <span className="text-xs text-muted-foreground leading-relaxed">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+
+            {/* CTA footer */}
+            <div className="border-t border-[#00F5FF]/10 bg-[#00F5FF]/3 px-8 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div className="flex items-start gap-3">
+                <FlaskConical className="w-5 h-5 text-[#00F5FF] shrink-0 mt-0.5" />
+                <div>
+                  <span className="text-sm font-semibold text-foreground block">Interested in a co-development or sponsorship arrangement?</span>
+                  <span className="text-xs text-muted-foreground">Full infrastructure context, accommodation framework, and partnership structure available in the prospectus.</span>
+                </div>
+              </div>
+              <Link
+                href="/proposal"
+                className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#00F5FF] text-black font-bold text-sm hover:bg-[#00F5FF]/90 transition-colors whitespace-nowrap shrink-0"
+              >
+                <Download className="w-4 h-4" />
+                Download Partnership Prospectus
+              </Link>
+            </div>
+
           </div>
 
           {/* Philosophy block */}
