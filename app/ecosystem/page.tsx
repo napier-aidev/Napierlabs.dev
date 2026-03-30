@@ -1,4 +1,4 @@
-import { Monitor, Scissors, ShieldCheck, ArrowLeft, Armchair, Barcode, Crosshair, Hand, Terminal, Layers3, Gauge, Wifi, ArrowRight, Anchor, Navigation, Accessibility, Download, Waves, FlaskConical, Droplets, Wind, Paintbrush, FileSearch, AlertTriangle } from "lucide-react"
+import { Monitor, Scissors, ShieldCheck, ArrowLeft, Armchair, Barcode, Crosshair, Hand, Terminal, Layers3, Gauge, Wifi, ArrowRight, Anchor, Navigation, Accessibility, Download, Waves, FlaskConical, Droplets, Wind, Paintbrush, FileSearch, AlertTriangle, Video, Eye, Zap, Radio, ShieldAlert, ScanLine } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -575,6 +575,184 @@ export default function EcosystemPage() {
                 <FileSearch className="w-4 h-4" />
                 View Gaahleri Safety Audit
               </Link>
+            </div>
+
+          </div>
+
+          {/* ─── Vision Systems ─── */}
+          <div className="glass-card rounded-2xl border border-[#00F5FF]/20 overflow-hidden mb-8">
+
+            {/* Section header */}
+            <div className="bg-[#00F5FF]/6 border-b border-[#00F5FF]/15 px-8 py-6 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+              <div>
+                <span className="text-xs font-mono text-[#00F5FF] uppercase tracking-widest block mb-2">
+                  // lab.infrastructure — vision.systems
+                </span>
+                <h2 className="text-xl md:text-2xl font-bold text-foreground flex items-center gap-3">
+                  <Video className="w-6 h-6 text-[#00F5FF] shrink-0" />
+                  Vision Systems
+                </h2>
+                <p className="text-sm text-muted-foreground mt-2 max-w-2xl">
+                  AI-powered aerial documentation and real-time visual quality assurance — fully hands-free cinematography integrated into every R&amp;D cycle.
+                </p>
+              </div>
+              <div className="flex flex-col items-end gap-2 shrink-0 self-start mt-1">
+                <span className="text-xs font-mono px-3 py-1.5 rounded-full bg-violet-500/10 text-violet-400 border border-violet-500/20 whitespace-nowrap">
+                  Lead Aerial Node
+                </span>
+                <span className="text-xs font-mono px-3 py-1.5 rounded-full bg-[#00F5FF]/10 text-[#00F5FF] border border-[#00F5FF]/20 whitespace-nowrap">
+                  Insta360 × BetaFPV
+                </span>
+              </div>
+            </div>
+
+            {/* Partnership banner */}
+            <div className="px-8 py-4 border-b border-[#00F5FF]/10 bg-[#00F5FF]/3 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div className="flex items-center gap-3">
+                <Radio className="w-4 h-4 text-[#00F5FF] shrink-0" />
+                <span className="text-sm font-semibold text-foreground">
+                  Insta360 Ace Pro 2 aboard the BetaFPV Antigravity
+                </span>
+                <span className="text-xs font-mono text-muted-foreground">— Lead Aerial Documentation Node</span>
+              </div>
+              <div className="flex items-center gap-2 flex-wrap">
+                {["4K AI-Tracked", "Hands-Free", "Indoor Safe"].map((tag) => (
+                  <span key={tag} className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#00F5FF]/8 text-[#00F5FF]/80 border border-[#00F5FF]/15">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Four feature panels */}
+            <div className="grid md:grid-cols-2 divide-y md:divide-x md:divide-y-0 divide-[#00F5FF]/10">
+
+              {/* Panel 1: Prosthetic Cinematographer */}
+              <div className="p-7 flex flex-col gap-4 border-b border-[#00F5FF]/10">
+                <div className="flex items-start gap-3">
+                  <div className="w-11 h-11 rounded-xl bg-violet-500/10 flex items-center justify-center shrink-0">
+                    <Eye className="w-5 h-5 text-violet-400" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-mono text-violet-400/80 uppercase tracking-wider block mb-1">Primary Role</span>
+                    <h3 className="text-sm font-bold text-foreground">Prosthetic Cinematographer</h3>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  The Insta360 Ace Pro 2&apos;s <span className="text-foreground font-semibold">AI subject tracking</span> autonomously locks onto and follows the operator or workpiece throughout every R&amp;D session. This eliminates the need for a camera operator, tripod adjustment, or manual framing — delivering <span className="text-[#00F5FF] font-semibold">100% hands-free 4K documentation</span> of every production cycle, prototype run, and field test.
+                </p>
+                <div className="mt-auto space-y-2 pt-3 border-t border-[#00F5FF]/8">
+                  {[
+                    "AI subject lock — no manual framing or follow adjustments",
+                    "4K 60fps capture of full R&D cycles without operator intervention",
+                    "Auto-horizon stabilization for smooth aerial production footage",
+                    "Generates B-roll, process documentation, and client-ready proof-of-work content",
+                  ].map((item) => (
+                    <div key={item} className="flex items-start gap-2">
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-violet-400/60 shrink-0" />
+                      <span className="text-xs text-muted-foreground leading-relaxed">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Panel 2: Visual QA on Blue Sky 360 Pro */}
+              <div className="p-7 flex flex-col gap-4 border-b border-[#00F5FF]/10">
+                <div className="flex items-start gap-3">
+                  <div className="w-11 h-11 rounded-xl bg-[#00F5FF]/10 flex items-center justify-center shrink-0">
+                    <ScanLine className="w-5 h-5 text-[#00F5FF]" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-mono text-[#00F5FF]/70 uppercase tracking-wider block mb-1">Technical Synergy</span>
+                    <h3 className="text-sm font-bold text-foreground">Real-Time Visual Quality Assurance</h3>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  During outdoor testing phases aboard the <span className="text-foreground font-semibold">Blue Sky 360 Pro Mobile Lab</span>, the Ace Pro 2&apos;s <span className="text-[#00F5FF] font-semibold">onboard AI Chip</span> processes footage locally — enabling real-time visual inspection of product prototypes under field conditions without requiring a second operator or post-session review delay.
+                </p>
+                <div className="mt-auto grid grid-cols-2 gap-2.5 pt-3 border-t border-[#00F5FF]/8">
+                  {[
+                    { label: "Resolution", value: "4K / 8K RAW" },
+                    { label: "AI Processor", value: "Onboard Chip" },
+                    { label: "Stabilization", value: "FlowState 6-Axis" },
+                    { label: "QA Mode", value: "Real-Time Field" },
+                  ].map((stat) => (
+                    <div key={stat.label} className="rounded-lg bg-[#00F5FF]/5 border border-[#00F5FF]/10 px-3 py-2">
+                      <span className="text-[10px] font-mono text-[#00F5FF]/60 uppercase tracking-wider block">{stat.label}</span>
+                      <span className="text-xs font-semibold text-foreground">{stat.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Panel 3: Antigravity Indoor Safety */}
+              <div className="p-7 flex flex-col gap-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-11 h-11 rounded-xl bg-emerald-500/10 flex items-center justify-center shrink-0">
+                    <ShieldAlert className="w-5 h-5 text-emerald-400" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-mono text-emerald-400/80 uppercase tracking-wider block mb-1">The Antigravity Edge</span>
+                    <h3 className="text-sm font-bold text-foreground">Autonomous Indoor Flight — Bedroom Micro-Factory</h3>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  The BetaFPV Antigravity&apos;s <span className="text-foreground font-semibold">small-form-factor frame</span> and full-coverage <span className="text-foreground font-semibold">propeller guards</span> certify it safe for autonomous flight within the Napier Labs indoor workspace. It can document workbench activity, overhead production angles, and 3D printer output cycles without requiring outdoor deployment or operator supervision.
+                </p>
+                <div className="mt-auto space-y-2 pt-3 border-t border-emerald-500/10">
+                  {[
+                    "Prop guards eliminate blade-strike risk in confined workspace environments",
+                    "Small-form-factor clears standard residential ceiling clearance",
+                    "Autonomous waypoint patrol of Prusa XL and Graphtec production stations",
+                    "Zero operator intervention — logs entire production shift on autopilot",
+                  ].map((item) => (
+                    <div key={item} className="flex items-start gap-2">
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-emerald-400/60 shrink-0" />
+                      <span className="text-xs text-muted-foreground leading-relaxed">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Panel 4: System specs */}
+              <div className="p-7 flex flex-col gap-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-11 h-11 rounded-xl bg-[#00F5FF]/10 flex items-center justify-center shrink-0">
+                    <Zap className="w-5 h-5 text-[#00F5FF]" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-mono text-[#00F5FF]/70 uppercase tracking-wider block mb-1">Combined System Specs</span>
+                    <h3 className="text-sm font-bold text-foreground">Insta360 Ace Pro 2 × BetaFPV Antigravity</h3>
+                  </div>
+                </div>
+                <div className="space-y-2 flex-1">
+                  {[
+                    { label: "Camera", value: "Insta360 Ace Pro 2" },
+                    { label: "Platform", value: "BetaFPV Antigravity" },
+                    { label: "Max Resolution", value: "8K RAW / 4K 120fps" },
+                    { label: "AI Features", value: "Subject Track, Auto-Framing" },
+                    { label: "Flight Safety", value: "Full Propeller Guards" },
+                    { label: "Frame Class", value: "Micro / Indoor-Rated" },
+                    { label: "Stabilization", value: "6-Axis FlowState" },
+                    { label: "Deployment", value: "Indoor Lab + Field" },
+                  ].map((spec) => (
+                    <div key={spec.label} className="flex items-center justify-between py-1.5 border-b border-[#00F5FF]/8 last:border-0">
+                      <span className="text-xs font-mono text-muted-foreground">{spec.label}</span>
+                      <span className="text-xs font-semibold text-foreground">{spec.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+
+            {/* Ecosystem integration note */}
+            <div className="border-t border-[#00F5FF]/10 bg-[#00F5FF]/3 px-8 py-5 flex items-start gap-3">
+              <Layers3 className="w-5 h-5 text-[#00F5FF] shrink-0 mt-0.5" />
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                <span className="text-foreground font-semibold">Full-Stack Documentation Loop:</span>{" "}
+                The Vision System completes the Napier Labs production record — Prusa XL prints the part, Graphtec cuts the graphics, the airbrush applies the finish, and the Antigravity documents every step autonomously. The result is a timestamped, 4K visual production log generated with zero additional operator effort or manual camera work.
+              </p>
             </div>
 
           </div>
