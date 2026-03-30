@@ -1,6 +1,7 @@
 "use client"
 
-import { ExternalLink, Zap, FlaskConical, CheckCircle, Clock, Wrench } from "lucide-react"
+import Link from "next/link"
+import { ExternalLink, Zap, FlaskConical, CheckCircle, Clock, Wrench, AlertTriangle, Lightbulb, SlidersHorizontal, Layers, Thermometer, Cpu, ArrowRight } from "lucide-react"
 
 const flagship = [
   {
@@ -175,6 +176,140 @@ export function ProjectVault() {
               </div>
             )
           })}
+        </div>
+
+        {/* ─── Technical Case Study ─── */}
+        <div className="mt-10 mb-4">
+          {/* Report header */}
+          <div className="flex items-center gap-4 mb-8">
+            <div className="flex-1 h-px bg-[#00F5FF]/10" />
+            <span className="text-xs font-mono text-[#00F5FF]/60 uppercase tracking-widest whitespace-nowrap">Technical Case Study</span>
+            <div className="flex-1 h-px bg-[#00F5FF]/10" />
+          </div>
+
+          <div className="rounded-2xl border border-[#00F5FF]/20 overflow-hidden">
+
+            {/* Case study title bar */}
+            <div className="bg-[#00F5FF]/6 border-b border-[#00F5FF]/15 px-8 py-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div>
+                <span className="text-xs font-mono text-[#00F5FF]/60 uppercase tracking-widest block mb-1">// case.study — additive.manufacturing</span>
+                <h3 className="text-xl md:text-2xl font-bold text-foreground">
+                  Case Study: Universal Impact Driver Holster
+                </h3>
+              </div>
+              <div className="flex items-center gap-2 shrink-0">
+                <span className="inline-flex items-center gap-1.5 text-xs font-mono font-bold px-3 py-1.5 rounded-full bg-[#00FF7F]/10 text-[#00FF7F]">
+                  <CheckCircle className="w-3 h-3" />
+                  PROTOTYPE COMPLETE
+                </span>
+              </div>
+            </div>
+
+            <div className="p-8 grid lg:grid-cols-2 gap-10">
+
+              {/* Left: Report sections */}
+              <div className="space-y-8">
+
+                {/* The Problem */}
+                <div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-7 h-7 rounded-lg bg-red-500/10 flex items-center justify-center shrink-0">
+                      <AlertTriangle className="w-4 h-4 text-red-400" />
+                    </div>
+                    <h4 className="text-sm font-bold text-foreground uppercase tracking-widest">The Problem</h4>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed pl-9">
+                    Construction professionals routinely lose seconds per reach retrieving impact drivers from generic belt clips — clips designed without consideration for tool balance, site debris ingress, or single-hand draw mechanics. At scale across a crew, this compounds into measurable productivity loss and increased tool drop risk on elevated surfaces.
+                  </p>
+                </div>
+
+                {/* The AI-Driven Solution */}
+                <div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-7 h-7 rounded-lg bg-[#00F5FF]/10 flex items-center justify-center shrink-0">
+                      <Lightbulb className="w-4 h-4 text-[#00F5FF]" />
+                    </div>
+                    <h4 className="text-sm font-bold text-foreground uppercase tracking-widest">The AI-Driven Solution</h4>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed pl-9 mb-4">
+                    Using generative AI-integrated CAD, we modeled a universal holster geometry optimized for the most common impact driver form factors. The AI iterated across 40+ draft geometries in minutes — testing retention angle, draw clearance, and stress distribution at mounting points — before outputting a final production-ready STL. The entire design cycle ran in under 3 hours.
+                  </p>
+                  <p className="text-sm text-muted-foreground leading-relaxed pl-9">
+                    The holster prints in a single-session run on a FDM platform with zero post-processing required. No molds, no tooling setup, no minimum order quantity.
+                  </p>
+                </div>
+
+                {/* Vocational Impact Callout */}
+                <div className="rounded-xl border border-[#00F5FF]/30 bg-[#00F5FF]/5 px-5 py-5 flex gap-4 items-start">
+                  <div className="w-1 self-stretch rounded-full bg-[#00F5FF] shrink-0" />
+                  <div>
+                    <span className="text-xs font-mono font-bold text-[#00F5FF] uppercase tracking-widest block mb-2">Vocational Impact</span>
+                    <p className="text-sm text-foreground font-medium leading-relaxed">
+                      This project demonstrates the shift from manual assembly to automated AI-driven manufacturing. By utilizing 3D printing, we eliminate{" "}
+                      <span className="text-[#00F5FF] font-bold">95% of the physical labor</span>{" "}
+                      required to produce high-durability construction hardware.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Right: Specs + Diagram placeholder */}
+              <div className="space-y-6">
+
+                {/* Technical Diagram placeholder */}
+                <div className="rounded-xl border border-[#00F5FF]/15 bg-white/[0.02] aspect-[4/3] flex flex-col items-center justify-center gap-3 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><path d=%22M0 20h40M20 0v40%22 stroke=%22%2300F5FF%22 stroke-width=%220.25%22 opacity=%220.15%22/></svg>')] bg-repeat" />
+                  <div className="relative z-10 flex flex-col items-center gap-2 text-center px-6">
+                    <div className="w-14 h-14 rounded-2xl border border-[#00F5FF]/20 bg-[#00F5FF]/5 flex items-center justify-center">
+                      <SlidersHorizontal className="w-7 h-7 text-[#00F5FF]/50" />
+                    </div>
+                    <p className="text-xs font-mono text-[#00F5FF]/50 uppercase tracking-widest">Technical Diagram</p>
+                    <p className="text-xs text-muted-foreground/50">Product photo / CAD render</p>
+                  </div>
+                </div>
+
+                {/* Technical Specifications */}
+                <div className="rounded-xl border border-[#00F5FF]/15 overflow-hidden">
+                  <div className="bg-[#00F5FF]/5 border-b border-[#00F5FF]/10 px-5 py-3">
+                    <span className="text-xs font-mono text-[#00F5FF] uppercase tracking-widest font-bold">Technical Specifications</span>
+                  </div>
+                  <div className="divide-y divide-[#00F5FF]/8">
+                    {[
+                      { icon: Layers, label: "Material", value: "ASA Polymer (UV-stabilized)" },
+                      { icon: Cpu, label: "Design Method", value: "Generative AI-integrated CAD" },
+                      { icon: Thermometer, label: "Thermal Range", value: "−20°C to 90°C operational" },
+                      { icon: SlidersHorizontal, label: "Retention System", value: "Single-hand magnetic draw" },
+                      { icon: Wrench, label: "Compatibility", value: "Universal — 18–22V impact drivers" },
+                      { icon: CheckCircle, label: "Post-Processing", value: "Zero — print-ready output" },
+                    ].map((spec) => (
+                      <div key={spec.label} className="flex items-center gap-3 px-5 py-3.5 hover:bg-[#00F5FF]/3 transition-colors">
+                        <spec.icon className="w-4 h-4 text-[#00F5FF]/50 shrink-0" />
+                        <span className="text-xs font-mono text-muted-foreground w-36 shrink-0">{spec.label}</span>
+                        <span className="text-xs font-semibold text-foreground">{spec.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            {/* CTA footer */}
+            <div className="border-t border-[#00F5FF]/10 px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 bg-[#00F5FF]/3">
+              <p className="text-sm text-muted-foreground">
+                Need custom job-site hardware or AI-designed tooling for your crew?
+              </p>
+              <Link
+                href="/#contact"
+                className="inline-flex items-center gap-2 font-bold text-sm font-mono px-6 py-3 rounded-lg bg-[#00F5FF] text-[#0a0f1e] hover:bg-[#00d4e0] transition-colors whitespace-nowrap"
+              >
+                Request a Custom Tooling Audit
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+          </div>
         </div>
 
         {/* Divider */}
