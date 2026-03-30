@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Lock, ExternalLink, Brain, Cpu, Scissors, ShieldCheck, Armchair, Monitor, FileText } from "lucide-react"
+import { Lock, ExternalLink, Brain, Cpu, Scissors, ShieldCheck, Armchair, Monitor, FileText, CheckCircle2, XCircle, AlertTriangle } from "lucide-react"
 
 const infraTable = [
   {
@@ -368,6 +368,168 @@ export default function OodJustificationPage() {
                   <span className="font-mono">napierlabs.dev/ecosystem</span>
                 </li>
               </ul>
+            </div>
+
+            {/* ─── Section 04: Technical Compute Requirement ─── */}
+            <div className="mb-12 print-section">
+              <div className="rounded-2xl border border-[#00F5FF]/20 overflow-hidden print-card">
+
+                {/* Section header */}
+                <div className="bg-[#00F5FF]/6 border-b border-[#00F5FF]/15 px-8 py-5 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 print-table-header">
+                  <div>
+                    <span className="text-xs font-mono text-[#00F5FF] uppercase tracking-widest block mb-1 no-print print-cyan">// section.04</span>
+                    <h2 className="text-lg font-bold text-foreground flex items-center gap-2">
+                      <Cpu className="w-5 h-5 text-[#00F5FF] no-print" />
+                      Technical Requirement: Generative AI &amp; CAD Compute Node
+                    </h2>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      High-Fidelity Generative Compute — Minimum System Specifications for 2026 Vocational Operation
+                    </p>
+                  </div>
+                  <span className="hidden sm:block text-xs font-mono px-3 py-1.5 rounded-full bg-[#00F5FF]/10 text-[#00F5FF] border border-[#00F5FF]/20 whitespace-nowrap shrink-0 self-start mt-1 no-print">
+                    Data Sheet Rev. 2026
+                  </span>
+                </div>
+
+                {/* VRAM / CUDA / Tensor Spec Table */}
+                <div className="overflow-x-auto border-b border-[#00F5FF]/10">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-[#00F5FF]/10 bg-[#00F5FF]/3 print-table-header">
+                        <th className="text-left px-6 py-3 font-mono text-xs text-[#00F5FF]/70 uppercase tracking-wider print-cyan">Compute Parameter</th>
+                        <th className="text-right px-6 py-3 font-mono text-xs text-[#00F5FF]/70 uppercase tracking-wider print-cyan">Minimum Required</th>
+                        <th className="text-right px-6 py-3 font-mono text-xs text-[#00F5FF]/70 uppercase tracking-wider print-cyan">RTX 5090 (Proposed)</th>
+                        <th className="text-left px-6 py-3 font-mono text-xs text-[#00F5FF]/70 uppercase tracking-wider print-cyan">Vocational Function</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        {
+                          param: "VRAM Capacity",
+                          min: "24 GB GDDR7",
+                          proposed: "24 GB GDDR7X",
+                          fn: "Full generative AI mesh inference; local LLM execution without cloud dependency",
+                        },
+                        {
+                          param: "CUDA Core Count",
+                          min: "16,000+ cores",
+                          proposed: "21,760 cores",
+                          fn: "Parallel topology optimization iterations; FEA solver acceleration",
+                        },
+                        {
+                          param: "Tensor Core (AI) Gen",
+                          min: "4th Gen (FP8 support)",
+                          proposed: "5th Gen (FP4/FP8)",
+                          fn: "Autodesk AI inference, nTop generative design, MIT MechStyle model runs",
+                        },
+                        {
+                          param: "Memory Bandwidth",
+                          min: "1.5 TB/s",
+                          proposed: "1.79 TB/s",
+                          fn: "High-throughput polygon mesh I/O for multi-body ASA simulations",
+                        },
+                        {
+                          param: "Ray Tracing Cores",
+                          min: "3rd Gen",
+                          proposed: "4th Gen",
+                          fn: "Real-time photorealistic CAD render for client review and documentation",
+                        },
+                        {
+                          param: "NVLink / PCIe",
+                          min: "PCIe 5.0 x16",
+                          proposed: "PCIe 5.0 x16",
+                          fn: "Full-bandwidth data transfer for AI training dataset pipelines",
+                        },
+                      ].map((row, i) => (
+                        <tr
+                          key={row.param}
+                          className={`border-b border-[#00F5FF]/8 hover:bg-[#00F5FF]/3 transition-colors print-table-row ${i % 2 === 0 ? "" : "bg-white/[0.01]"}`}
+                        >
+                          <td className="px-6 py-4 font-semibold text-foreground text-sm">{row.param}</td>
+                          <td className="px-6 py-4 text-right font-mono text-xs text-muted-foreground print-muted">{row.min}</td>
+                          <td className="px-6 py-4 text-right font-mono text-xs font-bold text-[#00F5FF] print-cyan">{row.proposed}</td>
+                          <td className="px-6 py-4 text-xs text-muted-foreground leading-relaxed max-w-[260px] print-muted">{row.fn}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+
+                {/* System Capability Comparison */}
+                <div className="px-8 py-7 border-b border-[#00F5FF]/10">
+                  <h3 className="text-sm font-bold text-foreground uppercase tracking-widest mb-5 flex items-center gap-2">
+                    <span className="w-px h-4 bg-[#00F5FF] inline-block" />
+                    System Capability Comparison
+                  </h3>
+                  <div className="grid md:grid-cols-2 gap-5">
+
+                    {/* Current System — FAIL */}
+                    <div className="rounded-xl border-2 border-red-500/30 bg-red-500/4 overflow-hidden print-card">
+                      <div className="px-5 py-3 border-b border-red-500/20 bg-red-500/8 flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <XCircle className="w-4 h-4 text-red-400 shrink-0" />
+                          <span className="text-xs font-mono font-bold text-red-400 uppercase tracking-wider">Current System</span>
+                        </div>
+                        <span className="text-xs font-mono px-2 py-0.5 rounded bg-red-500/15 text-red-400 border border-red-500/25">2019 Mac — FAILS</span>
+                      </div>
+                      <div className="p-5 space-y-3">
+                        {[
+                          "Fails to meet minimum VRAM requirements for Generative AI",
+                          "Thermal throttling prevents industrial rendering sessions",
+                          "No dedicated CUDA acceleration — CPU-only inference",
+                          "Unable to run nTop, Autodesk AI, or MIT MechStyle at operational load",
+                        ].map((item) => (
+                          <div key={item} className="flex items-start gap-2.5">
+                            <XCircle className="w-3.5 h-3.5 text-red-400/70 shrink-0 mt-0.5" />
+                            <span className="text-xs text-muted-foreground leading-relaxed print-muted">{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Proposed System — PASS */}
+                    <div className="rounded-xl border-2 border-[#00FF7F]/25 bg-[#00FF7F]/3 overflow-hidden print-card">
+                      <div className="px-5 py-3 border-b border-[#00FF7F]/20 bg-[#00FF7F]/8 flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <CheckCircle2 className="w-4 h-4 text-[#00FF7F] shrink-0" />
+                          <span className="text-xs font-mono font-bold text-[#00FF7F] uppercase tracking-wider">Proposed System</span>
+                        </div>
+                        <span className="text-xs font-mono px-2 py-0.5 rounded bg-[#00FF7F]/10 text-[#00FF7F] border border-[#00FF7F]/20">RTX 5090 — PASSES</span>
+                      </div>
+                      <div className="p-5 space-y-3">
+                        {[
+                          "Meets and exceeds all 2026 industrial CAD standards",
+                          "24 GB VRAM allows 100% local AI inference — no cloud",
+                          "Topology Optimization (nTop) runs at full fidelity",
+                          "Sustained compute under thermal load for full production sessions",
+                        ].map((item) => (
+                          <div key={item} className="flex items-start gap-2.5">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-[#00FF7F]/70 shrink-0 mt-0.5" />
+                            <span className="text-xs text-muted-foreground leading-relaxed print-muted">{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                {/* Mandatory Hardware Footer */}
+                <div className="px-8 py-6 bg-amber-500/5 border-t-2 border-amber-500/30 flex flex-col sm:flex-row items-start sm:items-center gap-4 print-card">
+                  <AlertTriangle className="w-5 h-5 text-amber-400 shrink-0 no-print" />
+                  <div>
+                    <span className="text-xs font-mono font-bold text-amber-400 uppercase tracking-widest block mb-1">Mandatory Hardware Requirement</span>
+                    <p className="text-sm text-foreground font-medium leading-relaxed">
+                      The software stack required for Napier Labs —{" "}
+                      <span className="text-[#00F5FF]">Autodesk Fusion</span>,{" "}
+                      <span className="text-[#00F5FF]">nTop</span>, and{" "}
+                      <span className="text-[#00F5FF]">MIT MechStyle</span>{" "}
+                      — requires a dedicated <span className="text-amber-400 font-bold">24 GB VRAM GPU</span> to perform vocational tasks. Without this, generative design, stress simulation, and AI-assisted CAD are non-functional at the operator&apos;s documented capacity level.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
             </div>
 
             {/* Signature / Attestation block */}
