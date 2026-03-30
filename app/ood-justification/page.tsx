@@ -35,12 +35,12 @@ const infraTable = [
     icon: Scissors,
   },
   {
-    item: "Gaahleri Atlantis Waterfall Booth & Silent Air Compressor",
+    item: "Gaahleri Atlantis Waterfall Booth & Silent Air Compressor + (2x) Swallowtail SD Airbrush Units",
     category: "Laboratory Safety Infrastructure",
     cost: "$2,100",
-    barrier: "Respiratory & Environmental Safety",
+    barrier: "Respiratory Safety & Fine Motor Dexterity",
     accommodation:
-      "Medical-grade downdraft waterfall filtration creates a compliant, clean-room standard airbrush environment. Eliminates aerosolized solvent and paint particulate exposure — a documented occupational health risk for extended production sessions.",
+      "Medical-grade downdraft waterfall filtration creates a compliant, clean-room standard airbrush environment. Eliminates aerosolized VOC exposure. Two Swallowtail SD units — one 0.5mm (Base/Clear) and one 0.3mm (Detail/Stenciling) — provide a Unified Ergonomic Interface using a consistent pistol-grip movement, bypassing the top-trigger actuation that is non-viable due to documented fine motor constraints.",
     priority: "High",
     icon: ShieldCheck,
   },
@@ -243,6 +243,109 @@ export default function OodJustificationPage() {
                     <span className="text-2xl font-bold font-mono text-[#00F5FF] print-cyan">{totalCost}</span>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            {/* ─── Surface Finishing Technical Specification ─── */}
+            <div className="mb-12 print-section">
+              <div className="rounded-2xl border border-[#00F5FF]/20 overflow-hidden print-card">
+
+                {/* Header */}
+                <div className="bg-[#00F5FF]/6 border-b border-[#00F5FF]/15 px-8 py-5 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 print-table-header">
+                  <div>
+                    <span className="text-xs font-mono text-[#00F5FF] uppercase tracking-widest block mb-1 no-print print-cyan">// section.01a — surface.finishing.specification</span>
+                    <h2 className="text-lg font-bold text-foreground flex items-center gap-2">
+                      <ShieldCheck className="w-5 h-5 text-[#00F5FF] no-print" />
+                      Surface Finishing: Mandatory Vocational Accommodation Detail
+                    </h2>
+                    <p className="text-sm text-muted-foreground mt-1">Gaahleri Swallowtail SD — Dual-Unit Configuration &amp; Ergonomic Mandate</p>
+                  </div>
+                  <span className="hidden sm:block text-xs font-mono px-3 py-1.5 rounded-full bg-red-500/10 text-red-400 border border-red-500/20 whitespace-nowrap shrink-0 self-start mt-1 no-print">
+                    Non-Negotiable Accommodation
+                  </span>
+                </div>
+
+                {/* Non-viability mandate */}
+                <div className="px-8 py-5 border-b border-red-500/15 bg-red-500/4 flex items-start gap-3">
+                  <XCircle className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
+                  <div>
+                    <span className="text-xs font-mono font-bold text-red-400 uppercase tracking-wider block mb-1">Non-Viable Tool — Top-Trigger Airbrush Design</span>
+                    <p className="text-sm text-muted-foreground leading-relaxed print-muted">
+                      Standard top-trigger airbrush actuation requires repeated pinch-grip compression at the index finger, sustained over the duration of a production session. For the Napier Labs founder, this actuation pattern is <span className="text-red-400 font-semibold">non-viable</span> due to documented fine motor dexterity constraints — the same hand spasm and motor control degradation that underpins this vocational rehabilitation case. Conventional airbrush ergonomics are a direct barrier to surface finishing production.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Dual-unit spec cards */}
+                <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-[#00F5FF]/10 border-b border-[#00F5FF]/10">
+
+                  {/* Unit A */}
+                  <div className="p-7">
+                    <div className="flex items-center justify-between gap-3 mb-4">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs font-mono font-bold px-2.5 py-1 rounded bg-[#00F5FF]/10 text-[#00F5FF] border border-[#00F5FF]/25">Unit A</span>
+                        <h3 className="text-sm font-bold text-foreground">Swallowtail SD — 0.5mm</h3>
+                      </div>
+                      <span className="text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shrink-0">Base / Clear</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-5 print-muted">
+                      High-volume output configuration — optimized for broad base coat coverage and UV-protective clear topcoat application across large substrate surfaces. The wider 0.5mm nozzle delivers consistent full-panel coverage at low actuation effort.
+                    </p>
+                    <div className="space-y-2">
+                      {[
+                        { label: "Needle / Nozzle", value: "0.5mm" },
+                        { label: "Application", value: "Base Coat, Clear Coat" },
+                        { label: "Substrates", value: "ASA Print, Vinyl, Fabric" },
+                        { label: "Actuation", value: "Pistol-Grip (Ergonomic)" },
+                      ].map((spec) => (
+                        <div key={spec.label} className="flex items-center justify-between py-1.5 border-b border-[#00F5FF]/8 last:border-0">
+                          <span className="text-xs font-mono text-muted-foreground print-muted">{spec.label}</span>
+                          <span className="text-xs font-semibold text-foreground">{spec.value}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Unit B */}
+                  <div className="p-7">
+                    <div className="flex items-center justify-between gap-3 mb-4">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs font-mono font-bold px-2.5 py-1 rounded bg-[#00F5FF]/10 text-[#00F5FF] border border-[#00F5FF]/25">Unit B</span>
+                        <h3 className="text-sm font-bold text-foreground">Swallowtail SD — 0.3mm</h3>
+                      </div>
+                      <span className="text-xs font-mono px-2 py-0.5 rounded bg-[#00F5FF]/10 text-[#00F5FF] border border-[#00F5FF]/20 shrink-0">Detail / Stencil</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-5 print-muted">
+                      Precision output configuration — optimized for fine-line stencil work, logo detail application, and gradient fade finishing. The 0.3mm nozzle delivers sub-millimeter edge control required for branded production deliverables and holster surface detailing.
+                    </p>
+                    <div className="space-y-2">
+                      {[
+                        { label: "Needle / Nozzle", value: "0.3mm" },
+                        { label: "Application", value: "Detail, Stencil, Gradient" },
+                        { label: "Substrates", value: "ASA Print, Hard Surface" },
+                        { label: "Actuation", value: "Pistol-Grip (Ergonomic)" },
+                      ].map((spec) => (
+                        <div key={spec.label} className="flex items-center justify-between py-1.5 border-b border-[#00F5FF]/8 last:border-0">
+                          <span className="text-xs font-mono text-muted-foreground print-muted">{spec.label}</span>
+                          <span className="text-xs font-semibold text-foreground">{spec.value}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                </div>
+
+                {/* Unified Ergonomic Interface rationale */}
+                <div className="px-8 py-6 bg-[#00F5FF]/3 flex items-start gap-4">
+                  <CheckCircle2 className="w-5 h-5 text-[#00FF7F] shrink-0 mt-0.5 no-print" />
+                  <div>
+                    <span className="text-xs font-mono font-bold text-[#00FF7F] uppercase tracking-widest block mb-2">Unified Ergonomic Interface — Accommodation Rationale</span>
+                    <p className="text-sm text-muted-foreground leading-relaxed print-muted">
+                      By standardizing both finishing units on the same Swallowtail SD pistol-grip platform, the Napier Labs production workflow achieves a <span className="text-foreground font-semibold">Unified Ergonomic Interface</span> across all finishing phases. The operator switches between Unit A and Unit B — pre-loaded with different needle configurations — without changing grip style, trigger mechanism, or hand position. All surface finishing production is performed using a single, pain-free, low-force <span className="text-[#00F5FF] font-semibold">pistol-grip actuation pattern</span> that does not aggravate documented motor control symptoms. This is not a preference — it is the only actuation geometry that allows sustained finishing output within the operator&apos;s functional capacity.
+                    </p>
+                  </div>
+                </div>
+
               </div>
             </div>
 
