@@ -138,6 +138,67 @@ export default function EcosystemPage() {
             </div>
           </div>
 
+          {/* Puget Systems Technical Audit */}
+          <div className="mb-8">
+            <div className="rounded-2xl border border-[#00F5FF]/20 overflow-hidden">
+              {/* Audit header */}
+              <div className="bg-[#00F5FF]/5 border-b border-[#00F5FF]/20 px-8 py-5 flex items-center justify-between">
+                <div>
+                  <span className="text-xs font-mono text-[#00F5FF] uppercase tracking-widest block mb-1">// technical.audit</span>
+                  <h2 className="text-lg font-bold text-foreground">Puget Systems RTX 5090 Workstation — Vocational Justification</h2>
+                </div>
+                <span className="hidden sm:inline-block text-xs font-mono px-3 py-1.5 rounded-full bg-[#00F5FF]/10 text-[#00F5FF] border border-[#00F5FF]/20 whitespace-nowrap">
+                  Data Sheet Rev. 2026
+                </span>
+              </div>
+
+              {/* Audit body */}
+              <div className="divide-y divide-[#00F5FF]/10">
+                {/* The Barrier */}
+                <div className="px-8 py-7 grid md:grid-cols-[180px_1fr] gap-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-red-400 mt-2 shrink-0" />
+                    <span className="text-xs font-mono font-bold text-red-400 uppercase tracking-widest leading-relaxed">The Barrier</span>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground mb-2">Processing Bottleneck — 2019 Intel Architecture</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      My current 2019 Intel-based architecture creates a critical processing bottleneck. Long render times and limited VRAM force extended time at the desk, which leads to physical fatigue and increased hand spasms — directly compromising output quality and career sustainability.
+                    </p>
+                  </div>
+                </div>
+
+                {/* The Solution */}
+                <div className="px-8 py-7 grid md:grid-cols-[180px_1fr] gap-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-[#00F5FF] mt-2 shrink-0" />
+                    <span className="text-xs font-mono font-bold text-[#00F5FF] uppercase tracking-widest leading-relaxed">The Solution</span>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground mb-2">RTX 5090 — 24GB+ VRAM Neural Engine Platform</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      The RTX 5090 Workstation provides the 24GB+ of VRAM required for Local LLM Training and Neural Engine processing in DaVinci Resolve — eliminating cloud dependency and enabling full AI inference pipelines to run entirely on-device, on demand.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Vocational Impact */}
+                <div className="px-8 py-7 grid md:grid-cols-[180px_1fr] gap-4 bg-[#00F5FF]/3">
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-[#00FF7F] mt-2 shrink-0" />
+                    <span className="text-xs font-mono font-bold text-[#00FF7F] uppercase tracking-widest leading-relaxed">Vocational Impact</span>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground mb-2">Time-on-Task Accommodation — 400% Throughput Increase</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      By reducing 4K render times and AI inference speed by 400%, a full day&apos;s output can be achieved within a condensed, low-fatigue work window. This is not a performance upgrade — it is a <span className="text-foreground font-semibold">vocational accommodation</span> that ensures the long-term sustainability of this career.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Software Alignment note */}
           <div className="glass-card rounded-2xl p-8 mb-8 border border-[#00F5FF]/20">
             <div className="flex items-start gap-4">

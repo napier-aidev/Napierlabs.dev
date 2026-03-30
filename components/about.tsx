@@ -26,17 +26,17 @@ export function About() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Bio content */}
           <div className="space-y-6">
+            <h3 className="text-xl md:text-2xl font-bold text-foreground">
+              The Architect: <span className="text-[#00F5FF]">Bridging Logic & Matter</span>
+            </h3>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I operate under the <span className="text-[#00F5FF] font-semibold">Vibe Coder</span> methodology—using AI not just as a tool, but as a <span className="text-foreground font-medium">physical prosthetic</span> that bridges the gap between high-level creative direction and real-world manufacturing execution.
+              I operate as a <span className="text-[#00F5FF] font-semibold">Vibe Coder</span>—leveraging AI not just as a tool, but as a <span className="text-foreground font-medium">Physical Prosthetic</span>. In an industry that often demands intense manual dexterity, I use high-level AI logic to bypass physical barriers.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Physical mobility challenges once defined my limitations. AI redefined them entirely. Through AI-augmented workflows, I&apos;ve driven <span className="text-[#00F5FF] font-bold">3.5x business growth</span>—architecting systems, running production lines, and shipping software simultaneously.
+              My mission at Napier Labs is to prove that with the right technical infrastructure, physical mobility challenges are no longer a bottleneck to <span className="text-[#00F5FF] font-bold">3.5x business growth</span>.
             </p>
-            <p className="text-[#00F5FF] font-medium text-glow-sm">
-              This is where physical limitation meets limitless capability.
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed mt-6 pt-6 border-t border-[#00F5FF]/20">
-              As Co-Owner of <span className="text-[#00F5FF] font-semibold">Cyberboss Studios</span>, I lead the technical infrastructure—industrial plotters, sublimation hardware, and AI-optimized production workflows—turning code-level precision into physical, tangible product.
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              I don&apos;t just write code; I architect systems that transform intent into physical reality.
             </p>
             <div className="flex items-center gap-4 pt-4">
               <div className="glass-card px-4 py-2 rounded-lg">
