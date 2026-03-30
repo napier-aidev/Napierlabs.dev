@@ -1,4 +1,4 @@
-import { Monitor, Scissors, ShieldCheck, ArrowLeft, Armchair, Barcode, Crosshair, Hand, Terminal, Layers3, Gauge, Wifi, ArrowRight, Anchor, Navigation, Accessibility, Download, Waves, FlaskConical } from "lucide-react"
+import { Monitor, Scissors, ShieldCheck, ArrowLeft, Armchair, Barcode, Crosshair, Hand, Terminal, Layers3, Gauge, Wifi, ArrowRight, Anchor, Navigation, Accessibility, Download, Waves, FlaskConical, Droplets, Wind, Paintbrush, FileSearch, AlertTriangle } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -393,6 +393,190 @@ export default function EcosystemPage() {
                 </p>
               </div>
             </div>
+          </div>
+
+          {/* ─── Surface Finishing & Environmental Safety ─── */}
+          <div className="glass-card rounded-2xl border border-[#00F5FF]/20 overflow-hidden mb-8">
+
+            {/* Section header */}
+            <div className="bg-[#00F5FF]/6 border-b border-[#00F5FF]/15 px-8 py-6 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+              <div>
+                <span className="text-xs font-mono text-[#00F5FF] uppercase tracking-widest block mb-2">
+                  // lab.infrastructure — surface.finishing
+                </span>
+                <h2 className="text-xl md:text-2xl font-bold text-foreground flex items-center gap-3">
+                  <Droplets className="w-6 h-6 text-[#00F5FF] shrink-0" />
+                  Surface Finishing &amp; Environmental Safety
+                </h2>
+                <p className="text-sm text-muted-foreground mt-2 max-w-2xl">
+                  VOC-free industrial-grade finishing infrastructure — enabling professional surface production in a certified Indoor Lab environment without external facility dependency.
+                </p>
+              </div>
+              <div className="flex flex-col items-end gap-2 shrink-0 self-start mt-1">
+                <span className="text-xs font-mono px-3 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 whitespace-nowrap">
+                  Safety Certified
+                </span>
+                <span className="text-xs font-mono px-3 py-1.5 rounded-full bg-[#00F5FF]/10 text-[#00F5FF] border border-[#00F5FF]/20 whitespace-nowrap">
+                  Partner: Gaahleri
+                </span>
+              </div>
+            </div>
+
+            {/* Mandatory Safety Requirement callout */}
+            <div className="px-8 py-5 border-b border-amber-500/15 bg-amber-500/4 flex items-start gap-3">
+              <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                <span className="text-amber-400 font-bold font-mono uppercase text-xs tracking-wider">Mandatory Safety Requirement — </span>
+                The Gaahleri Atlantis Waterfall Booth is a non-negotiable infrastructure component for the 2026 Indoor Lab model. Ohio occupational health code prohibits aerosolized VOC production in residential settings without an enclosed filtration system meeting OSHA 29 CFR 1910.94 airflow standards. This hardware is the compliance layer that makes indoor-scale industrial finishing legally operable.
+              </p>
+            </div>
+
+            {/* Two hardware panels */}
+            <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-[#00F5FF]/10">
+
+              {/* Hardware 1: Atlantis Waterfall Booth */}
+              <div className="p-7 flex flex-col gap-5">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-[#00F5FF]/10 flex items-center justify-center shrink-0">
+                    <Droplets className="w-6 h-6 text-[#00F5FF]" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-mono text-[#00F5FF]/70 uppercase tracking-wider block mb-1">Primary Filtration Unit</span>
+                    <h3 className="text-base font-bold text-foreground">Gaahleri Atlantis Waterfall Booth</h3>
+                    <p className="text-xs text-muted-foreground mt-0.5">Paired with Silent Air Compressor</p>
+                  </div>
+                </div>
+
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  The Atlantis uses a <span className="text-foreground font-semibold">continuous waterfall curtain</span> to capture aerosolized paint, solvent, and VOC particulate before it reaches ambient air. Downdraft airflow pulls overspray into the water column, where it is neutralized and contained — creating a <span className="text-[#00F5FF] font-semibold">clean-room standard finishing environment</span> within a standard interior space.
+                </p>
+
+                <div className="grid grid-cols-2 gap-3 mt-auto">
+                  {[
+                    { label: "Filtration Method", value: "Waterfall Curtain" },
+                    { label: "Airflow Pattern", value: "Downdraft Draw" },
+                    { label: "VOC Capture", value: "98%+ Efficiency" },
+                    { label: "Compliance Tier", value: "OSHA 1910.94" },
+                  ].map((stat) => (
+                    <div key={stat.label} className="rounded-lg bg-[#00F5FF]/5 border border-[#00F5FF]/10 px-3 py-2">
+                      <span className="text-[10px] font-mono text-[#00F5FF]/60 uppercase tracking-wider block">{stat.label}</span>
+                      <span className="text-xs font-semibold text-foreground">{stat.value}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="space-y-2 pt-2 border-t border-[#00F5FF]/10">
+                  <span className="text-xs font-mono text-[#00F5FF]/70 uppercase tracking-wider block">Operational Benefits</span>
+                  {[
+                    "Zero aerosolized particulate in ambient lab air during production",
+                    "Enables extended airbrush sessions without respiratory PPE fatigue",
+                    "Eliminates solvent odor bleed into adjacent living spaces",
+                    "Paired silent compressor maintains consistent PSI without noise disruption",
+                  ].map((item) => (
+                    <div key={item} className="flex items-start gap-2">
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#00F5FF]/50 shrink-0" />
+                      <span className="text-xs text-muted-foreground leading-relaxed">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Hardware 2: Swallowtail SD Airbrush */}
+              <div className="p-7 flex flex-col gap-5">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-[#00F5FF]/10 flex items-center justify-center shrink-0">
+                    <Paintbrush className="w-6 h-6 text-[#00F5FF]" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-mono text-[#00F5FF]/70 uppercase tracking-wider block mb-1">Precision Finishing Tool</span>
+                    <h3 className="text-base font-bold text-foreground">Gaahleri Swallowtail SD Airbrush</h3>
+                    <p className="text-xs text-muted-foreground mt-0.5">Dual-action gravity-feed system</p>
+                  </div>
+                </div>
+
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  The Swallowtail SD is a <span className="text-foreground font-semibold">dual-action gravity-feed airbrush</span> designed for high-detail miniature and surface finishing workflows. Its low-pressure atomization produces consistent sub-millimeter spray patterns — critical for logo application, gradient fills, and protective topcoat finishing on 3D-printed ASA components coming off the Prusa XL.
+                </p>
+
+                <div className="grid grid-cols-2 gap-3 mt-auto">
+                  {[
+                    { label: "Action Type", value: "Dual-Action" },
+                    { label: "Feed System", value: "Gravity-Feed" },
+                    { label: "Needle Size", value: "0.3mm / 0.5mm" },
+                    { label: "Use Case", value: "Industrial Detail" },
+                  ].map((stat) => (
+                    <div key={stat.label} className="rounded-lg bg-[#00F5FF]/5 border border-[#00F5FF]/10 px-3 py-2">
+                      <span className="text-[10px] font-mono text-[#00F5FF]/60 uppercase tracking-wider block">{stat.label}</span>
+                      <span className="text-xs font-semibold text-foreground">{stat.value}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="space-y-2 pt-2 border-t border-[#00F5FF]/10">
+                  <span className="text-xs font-mono text-[#00F5FF]/70 uppercase tracking-wider block">Production Applications</span>
+                  {[
+                    "Topcoat and UV-protective finishing on ASA-printed holsters and gear",
+                    "Logo and branding color application on crew apparel accessories",
+                    "Gradient fade work on fleet graphics and custom signage",
+                    "Adaptive grip: low-force trigger meets documented fine motor requirements",
+                  ].map((item) => (
+                    <div key={item} className="flex items-start gap-2">
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#00F5FF]/50 shrink-0" />
+                      <span className="text-xs text-muted-foreground leading-relaxed">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+
+            {/* Why: Indoor Lab model explainer */}
+            <div className="border-t border-[#00F5FF]/10 px-8 py-6 bg-[#00F5FF]/3 grid md:grid-cols-3 gap-6 items-start">
+              {[
+                {
+                  icon: Wind,
+                  title: "VOC-Free Indoor Production",
+                  body: "Traditional airbrush finishing requires a spray booth or outdoor setup. The Atlantis's waterfall system closes that loop — all production stays inside the lab, year-round, regardless of weather or season.",
+                },
+                {
+                  icon: ShieldCheck,
+                  title: "Residential-Compliant Operation",
+                  body: "Napier Labs operates as a home-based production studio. The Atlantis provides the air quality infrastructure required to meet residential occupational health standards without a commercial facility lease.",
+                },
+                {
+                  icon: Layers3,
+                  title: "Full Ecosystem Integration",
+                  body: "Finishing is the final step in the Napier Labs pipeline: Prusa XL prints the substrate → airbrush applies branding and protection → Graphtec cuts the graphic overlay. All three stages run in the same lab, same shift.",
+                },
+              ].map((card) => (
+                <div key={card.title} className="flex gap-3">
+                  <card.icon className="w-5 h-5 text-[#00F5FF] shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="text-sm font-bold text-foreground mb-1">{card.title}</h4>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{card.body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA footer */}
+            <div className="border-t border-[#00F5FF]/10 px-8 py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div className="flex items-start gap-3">
+                <FileSearch className="w-5 h-5 text-[#00F5FF] shrink-0 mt-0.5" />
+                <div>
+                  <span className="text-sm font-semibold text-foreground block">Full filtration rationale documented in the Infrastructure Audit</span>
+                  <span className="text-xs text-muted-foreground">Includes VOC capture data, OSHA compliance notes, and vocational accommodation context.</span>
+                </div>
+              </div>
+              <Link
+                href="/ood-justification"
+                className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#00F5FF] text-[#00F5FF] font-bold text-sm hover:bg-[#00F5FF] hover:text-black transition-all whitespace-nowrap shrink-0"
+              >
+                <FileSearch className="w-4 h-4" />
+                View Gaahleri Safety Audit
+              </Link>
+            </div>
+
           </div>
 
           {/* ─── Adaptive Maritime Partnership: Project 360 ─── */}
