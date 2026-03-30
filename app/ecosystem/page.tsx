@@ -1,27 +1,38 @@
-import { Monitor, Scissors, Wind, ArrowLeft } from "lucide-react"
+import { Monitor, Scissors, ShieldCheck, ArrowLeft, ArrowUpRight, Armchair } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
-const infrastructure = [
+const roadmap = [
   {
     icon: Monitor,
-    category: "Computing",
-    item: "Puget Systems RTX 5090 Workstations",
-    detail: "Optimized for Local AI Training",
+    category: "The AI Core",
+    item: "Puget Systems RTX 5090 Workstation",
+    detail:
+      "Optimized for local LLM training and 4K rendering. Purpose-built for AI inference pipelines and high-throughput creative production without cloud dependency.",
     status: "2026 Roadmap",
   },
   {
     icon: Scissors,
-    category: "Precision Cutting",
-    item: "Graphtec CE8000-60 Industrial Plotters",
-    detail: "High-precision vinyl and material cutting at industrial scale",
+    category: "Precision Production",
+    item: "Graphtec CE8000-60 Industrial Plotter",
+    detail:
+      "Barcode-integrated B2B workflow with sub-millimeter cut accuracy. Native integration target for Vinyl Vision Pro's automated cut-path logic engine.",
     status: "2026 Roadmap",
   },
   {
-    icon: Wind,
-    category: "Airbrushing",
-    item: "Gaahleri GT-Series & Silent Air Production",
-    detail: "Professional-grade airbrushing with silent compressor systems",
+    icon: ShieldCheck,
+    category: "Laboratory Safety",
+    item: "Gaahleri Atlantis Waterfall Booth & Silent Air Compressor",
+    detail:
+      "Medical-grade air filtration with downdraft waterfall containment. Provides a clean-room standard environment for high-detail airbrushing operations.",
+    status: "2026 Roadmap",
+  },
+  {
+    icon: Armchair,
+    category: "Ergonomic Infrastructure",
+    item: "UPLIFT Desk 4-Leg Commercial Frame",
+    detail:
+      "330 lb capacity for heavy manufacturing configurations. Supports dual-monitor rigs, production hardware, and adaptive ergonomic workflows.",
     status: "2026 Roadmap",
   },
 ]
@@ -58,54 +69,91 @@ export default function EcosystemPage() {
         <div className="max-w-6xl mx-auto">
 
           {/* Back link */}
-          <Link href="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-[#00F5FF] transition-colors mb-12 font-mono">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-[#00F5FF] transition-colors mb-12 font-mono"
+          >
             <ArrowLeft className="w-4 h-4" />
             Back to Lab
           </Link>
 
           {/* Page header */}
           <div className="text-center mb-20">
-            <span className="text-[#00F5FF] font-mono text-sm mb-4 block">// technical.infrastructure</span>
+            <span className="text-[#00F5FF] font-mono text-sm mb-4 block">// napier.labs.ecosystem</span>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="text-foreground">The </span>
+              <span className="text-foreground">The Napier Labs </span>
               <span className="text-[#00F5FF] text-glow">Ecosystem</span>
             </h1>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto text-balance">
-              The physical and digital infrastructure behind Napier Labs—where software precision meets industrial hardware capability.
+              The physical and digital infrastructure behind Napier Labs — where AI software precision meets industrial hardware capability.
             </p>
           </div>
 
-          {/* Technical Infrastructure Section */}
-          <div className="mb-20">
+          {/* 2026 Roadmap Section */}
+          <div className="mb-8">
             <div className="glass-card glow-border rounded-2xl p-8 md:p-12">
               <div className="mb-10">
-                <span className="text-xs font-mono font-bold text-[#00F5FF] tracking-widest uppercase">Standard Lab Infrastructure</span>
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground mt-2">2026 Roadmap</h2>
-                <p className="text-muted-foreground mt-3 max-w-xl">
-                  Purpose-built hardware selected for AI training throughput, precision manufacturing, and professional production at scale.
+                <span className="text-xs font-mono font-bold text-[#00F5FF] tracking-widest uppercase">
+                  Technical Infrastructure Roadmap
+                </span>
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mt-2">
+                  Planned 2026 Lab Standards
+                </h2>
+                <p className="text-muted-foreground mt-3 max-w-2xl">
+                  Purpose-selected hardware engineered for AI training throughput, precision manufacturing, laboratory safety, and adaptive ergonomic workflows — all at production scale.
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-6">
-                {infrastructure.map((item) => (
+              <div className="grid md:grid-cols-2 gap-6">
+                {roadmap.map((item) => (
                   <div
                     key={item.item}
                     className="glass-card glass-card-hover rounded-xl p-6 group transition-all duration-300 relative overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-[#00F5FF]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                     <div className="relative z-10">
-                      <div className="w-12 h-12 rounded-lg bg-[#00F5FF]/10 flex items-center justify-center mb-5 group-hover:bg-[#00F5FF]/20 transition-colors">
-                        <item.icon className="w-6 h-6 text-[#00F5FF]" />
+                      <div className="flex items-start gap-4 mb-4">
+                        <div className="w-12 h-12 rounded-lg bg-[#00F5FF]/10 flex items-center justify-center shrink-0 group-hover:bg-[#00F5FF]/20 transition-colors">
+                          <item.icon className="w-6 h-6 text-[#00F5FF]" />
+                        </div>
+                        <div>
+                          <span className="text-xs font-mono text-[#00F5FF]/70 uppercase tracking-wider block mb-1">
+                            {item.category}
+                          </span>
+                          <h3 className="text-base font-semibold text-foreground leading-snug">
+                            {item.item}
+                          </h3>
+                        </div>
                       </div>
-                      <span className="text-xs font-mono text-[#00F5FF]/70 uppercase tracking-wider mb-2 block">{item.category}</span>
-                      <h3 className="text-lg font-semibold text-foreground mb-2 leading-snug">{item.item}</h3>
-                      <p className="text-sm text-muted-foreground mb-4">{item.detail}</p>
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                        {item.detail}
+                      </p>
                       <span className="inline-block text-xs font-mono px-3 py-1 rounded-full bg-[#00F5FF]/10 text-[#00F5FF]">
                         {item.status}
                       </span>
                     </div>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Software Alignment note */}
+          <div className="glass-card rounded-2xl p-8 mb-8 border border-[#00F5FF]/20">
+            <div className="flex items-start gap-4">
+              <div className="w-2 h-full min-h-[2rem] rounded-full bg-[#00F5FF] shrink-0 mt-1" />
+              <div>
+                <span className="text-xs font-mono text-[#00F5FF] uppercase tracking-widest mb-2 block">
+                  // project.alignment
+                </span>
+                <p className="text-muted-foreground leading-relaxed">
+                  Our software —{" "}
+                  <span className="text-foreground font-semibold">Vinyl Vision Pro</span> and{" "}
+                  <span className="text-foreground font-semibold">Cuesight.ai</span> — is currently
+                  being pre-optimized to integrate natively with this hardware roadmap. Every software
+                  architecture decision is made with this physical infrastructure as the target
+                  environment.
+                </p>
               </div>
             </div>
           </div>
@@ -117,7 +165,7 @@ export default function EcosystemPage() {
               Code meets <span className="text-[#00F5FF] text-glow">Carbon</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto text-balance">
-              Every hardware selection is chosen to extend the capability of our AI workflows into the physical world. We don&apos;t just build software—we build the machines that run alongside it.
+              Every hardware selection is chosen to extend the capability of our AI workflows into the physical world. We don&apos;t just build software — we build the machines that run alongside it.
             </p>
             <p className="text-[#00F5FF] font-mono text-sm mt-6">Built with AI. Tested in the Field.</p>
           </div>
