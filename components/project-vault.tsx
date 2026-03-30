@@ -312,6 +312,152 @@ export function ProjectVault() {
           </div>
         </div>
 
+        {/* ─── Project Alpha ─── */}
+        <div className="mt-6 mb-4">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="flex-1 h-px bg-amber-500/20" />
+            <span className="text-xs font-mono text-amber-400/60 uppercase tracking-widest whitespace-nowrap">Project Alpha — In Development</span>
+            <div className="flex-1 h-px bg-amber-500/20" />
+          </div>
+
+          <div className="rounded-2xl border border-amber-500/25 overflow-hidden">
+
+            {/* Header */}
+            <div className="bg-amber-500/5 border-b border-amber-500/20 px-8 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div>
+                <span className="text-xs font-mono text-amber-400/70 uppercase tracking-widest block mb-1">// project.alpha — ai.generative.tooling</span>
+                <h3 className="text-xl md:text-2xl font-bold text-foreground">
+                  AI-Generative Tooling <span className="text-amber-400">(In-Development)</span>
+                </h3>
+              </div>
+              <span className="inline-flex items-center gap-1.5 text-xs font-mono font-bold px-3 py-1.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/25 whitespace-nowrap shrink-0">
+                <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse inline-block" />
+                DESIGN IN PROGRESS
+              </span>
+            </div>
+
+            <div className="p-8 grid lg:grid-cols-2 gap-10">
+
+              {/* Left: Content */}
+              <div className="space-y-6">
+
+                <div>
+                  <p className="text-xs font-mono text-muted-foreground/60 uppercase tracking-widest mb-2">Current Subject</p>
+                  <h4 className="text-lg font-bold text-foreground mb-1">Universal Impact Driver Holster</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    AI-generative CAD design for a universal construction-grade holster. The logical architecture and material spec (ASA polymer, −20°C to 90°C range) are fully defined. Execution of the generative mesh algorithms and real-time physics simulation is blocked at the hardware level.
+                  </p>
+                </div>
+
+                {/* STATUS ALERT */}
+                <div className="rounded-xl border-2 border-amber-500/40 bg-amber-500/8 p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse shrink-0" />
+                    <span className="text-sm font-mono font-bold text-amber-400 uppercase tracking-widest">
+                      STATUS: Design Paused Due to Hardware Constraints
+                    </span>
+                  </div>
+                  <p className="text-sm text-amber-200/80 leading-relaxed">
+                    Current 2019 Intel-based hardware lacks the CUDA Cores and VRAM required to execute the generative AI algorithms and real-time 3D rendering needed for industrial-grade ASA polymers.
+                  </p>
+                </div>
+
+                {/* Technical Requirement */}
+                <div className="rounded-xl border border-[#00F5FF]/20 bg-[#00F5FF]/3 p-5">
+                  <span className="text-xs font-mono font-bold text-[#00F5FF] uppercase tracking-widest block mb-2">Technical Requirement</span>
+                  <p className="text-sm text-foreground leading-relaxed">
+                    Completion of this project requires the <span className="text-[#00F5FF] font-bold">24GB VRAM of an RTX 5090</span> to handle high-fidelity physics simulations and AI-assisted CAD logic.
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {["RTX 5090 — 24GB VRAM", "CUDA Core Acceleration", "Real-Time Physics Sim", "AI-Assisted CAD"].map((req) => (
+                      <span key={req} className="text-xs font-mono px-2.5 py-1 rounded bg-[#00F5FF]/10 text-[#00F5FF] border border-[#00F5FF]/15">
+                        {req}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Right: Blueprint wireframe placeholder */}
+              <div className="rounded-xl border border-amber-500/20 bg-[#0a0f1e] overflow-hidden relative">
+                {/* Blueprint grid */}
+                <svg
+                  className="absolute inset-0 w-full h-full opacity-20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs>
+                    <pattern id="blueprint-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+                      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#00F5FF" strokeWidth="0.4" />
+                    </pattern>
+                    <pattern id="blueprint-grid-major" width="150" height="150" patternUnits="userSpaceOnUse">
+                      <rect width="150" height="150" fill="url(#blueprint-grid)" />
+                      <path d="M 150 0 L 0 0 0 150" fill="none" stroke="#00F5FF" strokeWidth="0.8" />
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#blueprint-grid-major)" />
+                </svg>
+
+                {/* Wireframe holster schematic */}
+                <svg
+                  viewBox="0 0 300 260"
+                  className="relative z-10 w-full h-full p-6 opacity-70"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  stroke="#00F5FF"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  {/* Main holster body */}
+                  <rect x="90" y="40" width="120" height="160" rx="12" strokeDasharray="5 3" />
+                  {/* Belt loop top */}
+                  <rect x="115" y="22" width="70" height="24" rx="6" />
+                  {/* Belt loop bottom */}
+                  <rect x="115" y="196" width="70" height="22" rx="6" />
+                  {/* Tool insertion guide */}
+                  <line x1="110" y1="80" x2="190" y2="80" strokeDasharray="4 2" />
+                  <line x1="110" y1="140" x2="190" y2="140" strokeDasharray="4 2" />
+                  {/* Center axis */}
+                  <line x1="150" y1="40" x2="150" y2="200" stroke="#00F5FF" strokeWidth="0.5" strokeDasharray="8 4" opacity="0.4" />
+                  {/* Dimension arrows */}
+                  <line x1="60" y1="40" x2="60" y2="200" stroke="#00F5FF" strokeWidth="0.7" opacity="0.5" />
+                  <line x1="56" y1="40" x2="64" y2="40" strokeWidth="0.7" opacity="0.5" />
+                  <line x1="56" y1="200" x2="64" y2="200" strokeWidth="0.7" opacity="0.5" />
+                  {/* Retention magnet indicator */}
+                  <circle cx="150" cy="110" r="18" strokeDasharray="3 2" stroke="#00FF7F" strokeWidth="1.2" />
+                  <circle cx="150" cy="110" r="6" stroke="#00FF7F" strokeWidth="1" />
+                  {/* Corner registration marks */}
+                  {[[90,40],[210,40],[90,200],[210,200]].map(([x,y], i) => (
+                    <g key={i}>
+                      <line x1={x-6} y1={y} x2={x+6} y2={y} stroke="#00F5FF" strokeWidth="0.6" opacity="0.5" />
+                      <line x1={x} y1={y-6} x2={x} y2={y+6} stroke="#00F5FF" strokeWidth="0.6" opacity="0.5" />
+                    </g>
+                  ))}
+                  {/* Labels */}
+                  <text x="220" y="115" fontSize="7" fill="#00F5FF" stroke="none" opacity="0.7" fontFamily="monospace">⌀ MAG</text>
+                  <text x="220" y="125" fontSize="7" fill="#00F5FF" stroke="none" opacity="0.7" fontFamily="monospace">LOCK</text>
+                  <text x="32" y="123" fontSize="7" fill="#00F5FF" stroke="none" opacity="0.7" fontFamily="monospace">160mm</text>
+                  <text x="96" y="17" fontSize="7" fill="#00F5FF" stroke="none" opacity="0.7" fontFamily="monospace">BELT_LOOP_A</text>
+                  <text x="96" y="232" fontSize="7" fill="#00F5FF" stroke="none" opacity="0.7" fontFamily="monospace">BELT_LOOP_B</text>
+                  <text x="96" y="250" fontSize="7" fill="#FF9500" stroke="none" opacity="0.9" fontFamily="monospace">⚠ RENDER BLOCKED — RTX 5090 REQ.</text>
+                </svg>
+
+                {/* Paused overlay badge */}
+                <div className="absolute top-3 right-3 z-20">
+                  <span className="text-xs font-mono px-2 py-1 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30">
+                    CAD DRAFT — PAUSED
+                  </span>
+                </div>
+                <div className="absolute bottom-3 left-3 z-20">
+                  <span className="text-xs font-mono text-[#00F5FF]/40">// impact_driver_holster_v0.3.stl</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
         {/* Divider */}
         <div className="flex items-center gap-4 my-14">
           <div className="flex-1 h-px bg-[#00F5FF]/10" />
