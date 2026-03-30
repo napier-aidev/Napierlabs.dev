@@ -458,6 +458,158 @@ export function ProjectVault() {
           </div>
         </div>
 
+        {/* ─── R&D: Adaptive Construction Gear ─── */}
+        <div className="mt-6 mb-4">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="flex-1 h-px bg-red-500/20" />
+            <span className="text-xs font-mono text-red-400/60 uppercase tracking-widest whitespace-nowrap">Napier Labs R&amp;D</span>
+            <div className="flex-1 h-px bg-red-500/20" />
+          </div>
+
+          <div className="rounded-2xl border border-red-500/20 overflow-hidden">
+
+            {/* Header */}
+            <div className="bg-red-500/5 border-b border-red-500/15 px-8 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div>
+                <span className="text-xs font-mono text-red-400/60 uppercase tracking-widest block mb-1">// napier.labs.rd — adaptive.construction.gear</span>
+                <h3 className="text-xl md:text-2xl font-bold text-foreground">
+                  Adaptive Construction Gear
+                </h3>
+              </div>
+              {/* COMPUTE LIMITED badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border-2 border-red-500/50 bg-red-500/10 shrink-0">
+                <span className="w-2 h-2 rounded-full bg-red-400 animate-pulse shrink-0" />
+                <span className="text-xs font-mono font-bold text-red-400 uppercase tracking-wider">
+                  COMPUTE LIMITED
+                </span>
+              </div>
+            </div>
+
+            <div className="p-8 grid lg:grid-cols-2 gap-10">
+
+              {/* Left: Engineering details */}
+              <div className="space-y-6">
+
+                {/* Project nameplate */}
+                <div className="rounded-xl border border-red-500/15 bg-red-500/3 p-5">
+                  <p className="text-xs font-mono text-red-400/70 uppercase tracking-widest mb-1">Project</p>
+                  <h4 className="text-lg font-bold text-foreground mb-1">Universal Impact Driver Holster</h4>
+                  <span className="text-xs font-mono px-2.5 py-1 rounded bg-red-500/10 text-red-400 border border-red-500/20">
+                    v1.0 — AI Prototype
+                  </span>
+                </div>
+
+                {/* Engineering Logic */}
+                <div>
+                  <span className="text-xs font-mono font-bold text-[#00F5FF] uppercase tracking-widest block mb-2">Engineering Logic</span>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Utilizing <span className="text-foreground font-medium">Generative AI</span> and <span className="text-foreground font-medium">topology optimization</span> to create a high-strength ASA polymer holster for industrial construction environments.
+                  </p>
+                </div>
+
+                {/* Compute block explanation */}
+                <div className="rounded-xl border-2 border-red-500/35 bg-red-500/5 p-5">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="w-2 h-2 rounded-full bg-red-400 animate-pulse shrink-0" />
+                    <span className="text-xs font-mono font-bold text-red-400 uppercase tracking-wider">Compute Block</span>
+                  </div>
+                  <p className="text-sm text-red-200/70 leading-relaxed">
+                    Awaiting <span className="text-red-300 font-semibold">24GB VRAM Hardware</span> for Final Stress Simulation. Current architecture cannot execute high-fidelity topology mesh refinement or CUDA-accelerated FEA solver passes required for production sign-off.
+                  </p>
+                </div>
+
+                {/* Market goal */}
+                <div className="rounded-xl border border-[#00F5FF]/20 bg-[#00F5FF]/3 p-5">
+                  <span className="text-xs font-mono font-bold text-[#00F5FF] uppercase tracking-widest block mb-2">2026 Market Goal</span>
+                  <p className="text-sm text-foreground leading-relaxed mb-3">
+                    This project serves as our <span className="text-[#00F5FF] font-bold">2026 Flagship Entry</span> into the $2B construction hardware market, specifically targeting the local Amish roofing and framing sectors.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {["$2B Market", "Amish Roofing", "Framing Sector", "2026 Launch"].map((tag) => (
+                      <span key={tag} className="text-xs font-mono px-2.5 py-1 rounded bg-[#00F5FF]/10 text-[#00F5FF] border border-[#00F5FF]/15">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Right: Blueprint */}
+              <div className="rounded-xl border border-red-500/15 bg-[#080d1a] overflow-hidden relative min-h-[340px]">
+                {/* Blueprint grid — red tint */}
+                <svg className="absolute inset-0 w-full h-full opacity-15" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <pattern id="rd-grid-sm" width="24" height="24" patternUnits="userSpaceOnUse">
+                      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#ff6b6b" strokeWidth="0.3" />
+                    </pattern>
+                    <pattern id="rd-grid-lg" width="120" height="120" patternUnits="userSpaceOnUse">
+                      <rect width="120" height="120" fill="url(#rd-grid-sm)" />
+                      <path d="M 120 0 L 0 0 0 120" fill="none" stroke="#ff6b6b" strokeWidth="0.7" />
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#rd-grid-lg)" />
+                </svg>
+
+                {/* 2D blueprint schematic */}
+                <svg
+                  viewBox="0 0 300 280"
+                  className="relative z-10 w-full h-full p-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  {/* Holster body — topology optimized cutouts */}
+                  <rect x="85" y="45" width="130" height="170" rx="14" stroke="#ff6b6b" strokeWidth="1.4" strokeDasharray="6 3" />
+                  {/* Internal topology web */}
+                  <line x1="110" y1="90" x2="210" y2="90" stroke="#ff6b6b" strokeWidth="0.6" strokeDasharray="3 3" opacity="0.5" />
+                  <line x1="110" y1="150" x2="210" y2="150" stroke="#ff6b6b" strokeWidth="0.6" strokeDasharray="3 3" opacity="0.5" />
+                  <line x1="150" y1="70" x2="150" y2="200" stroke="#ff6b6b" strokeWidth="0.5" strokeDasharray="8 4" opacity="0.3" />
+                  {/* Top belt mount */}
+                  <rect x="112" y="26" width="76" height="26" rx="7" stroke="#ff6b6b" strokeWidth="1.2" />
+                  {/* Bottom belt mount */}
+                  <rect x="112" y="208" width="76" height="22" rx="7" stroke="#ff6b6b" strokeWidth="1.2" />
+                  {/* Retention lip */}
+                  <path d="M 100 100 Q 150 88 200 100" stroke="#00F5FF" strokeWidth="1" strokeDasharray="4 2" />
+                  {/* Stress sim mesh nodes — blocked state */}
+                  {[[115,120],[150,110],[185,120],[130,155],[170,155]].map(([x,y], i) => (
+                    <g key={i}>
+                      <circle cx={x} cy={y} r="3.5" stroke="#ff6b6b" strokeWidth="0.8" fill="rgba(255,100,100,0.08)" />
+                      <line x1={x} y1={y} x2={150} y2={130} stroke="#ff6b6b" strokeWidth="0.4" opacity="0.25" />
+                    </g>
+                  ))}
+                  {/* Central FEA node — blocked */}
+                  <circle cx="150" cy="130" r="10" stroke="#ff6b6b" strokeWidth="1.2" fill="rgba(255,100,100,0.06)" strokeDasharray="3 2" />
+                  <text x="142" y="134" fontSize="7" fill="#ff6b6b" stroke="none" fontFamily="monospace" opacity="0.8">FEA</text>
+                  {/* Dimension lines */}
+                  <line x1="55" y1="45" x2="55" y2="215" stroke="#ff6b6b" strokeWidth="0.6" opacity="0.4" />
+                  <line x1="51" y1="45" x2="59" y2="45" stroke="#ff6b6b" strokeWidth="0.6" opacity="0.4" />
+                  <line x1="51" y1="215" x2="59" y2="215" stroke="#ff6b6b" strokeWidth="0.6" opacity="0.4" />
+                  <text x="20" y="134" fontSize="6.5" fill="#ff6b6b" stroke="none" fontFamily="monospace" opacity="0.6">170mm</text>
+                  {/* ASA label */}
+                  <text x="90" y="38" fontSize="6.5" fill="#ff6b6b" stroke="none" fontFamily="monospace" opacity="0.7">MAT: ASA/UV-STB</text>
+                  {/* Warning line */}
+                  <text x="68" y="260" fontSize="6.5" fill="#ff6b6b" stroke="none" opacity="0.85" fontFamily="monospace">⚠ STRESS SIM BLOCKED — 24GB VRAM REQUIRED</text>
+                  {/* Top right ref */}
+                  <text x="196" y="38" fontSize="6" fill="#ff6b6b" stroke="none" fontFamily="monospace" opacity="0.5">v1.0</text>
+                </svg>
+
+                {/* Overlaid badges */}
+                <div className="absolute top-3 right-3 z-20">
+                  <span className="text-xs font-mono px-2 py-1 rounded bg-red-500/20 text-red-400 border border-red-500/30">
+                    SIM BLOCKED
+                  </span>
+                </div>
+                <div className="absolute bottom-3 left-3 z-20">
+                  <span className="text-xs font-mono text-red-400/40">// holster_v1.0_topology.step</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
         {/* Divider */}
         <div className="flex items-center gap-4 my-14">
           <div className="flex-1 h-px bg-[#00F5FF]/10" />
