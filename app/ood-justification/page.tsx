@@ -532,6 +532,161 @@ export default function OodJustificationPage() {
               </div>
             </div>
 
+            {/* ─── Section 05: 30-Day Launch Sequence ─── */}
+            <div className="mb-12 print-section">
+              <div className="rounded-2xl border border-[#00F5FF]/20 overflow-hidden print-card">
+
+                {/* Section header */}
+                <div className="bg-[#00F5FF]/6 border-b border-[#00F5FF]/15 px-8 py-5 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 print-table-header">
+                  <div>
+                    <span className="text-xs font-mono text-[#00F5FF] uppercase tracking-widest block mb-1 no-print print-cyan">// section.05 — implementation.timeline</span>
+                    <h2 className="text-lg font-bold text-foreground">
+                      Napier Labs: 30-Day Launch Sequence (Post-Funding)
+                    </h2>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      Immediate Vocational Implementation — Week-by-Week Activation Protocol
+                    </p>
+                  </div>
+                  <span className="hidden sm:block text-xs font-mono px-3 py-1.5 rounded-full bg-[#00F5FF]/10 text-[#00F5FF] border border-[#00F5FF]/20 whitespace-nowrap shrink-0 self-start mt-1 no-print">
+                    T+0 to T+30 Days
+                  </span>
+                </div>
+
+                {/* Timeline steps */}
+                <div className="px-8 py-8">
+                  <div className="relative">
+                    {/* Vertical connector line */}
+                    <div className="absolute left-[19px] top-8 bottom-8 w-px bg-gradient-to-b from-[#00F5FF]/40 via-[#00F5FF]/20 to-[#00F5FF]/5 no-print" />
+
+                    <div className="space-y-0">
+                      {[
+                        {
+                          week: "Week 1",
+                          days: "Days 1–7",
+                          title: "Infrastructure Deployment & Calibration",
+                          color: "#00F5FF",
+                          bgColor: "bg-[#00F5FF]/10",
+                          borderColor: "border-[#00F5FF]/30",
+                          tasks: [
+                            "Receive and install Puget Systems RTX 5090 Workstation; run GPU benchmark suite",
+                            "Prusa XL unboxing, first-layer calibration, and multi-material toolhead configuration (ASA + TPU + PETG)",
+                            "Graphtec CE8000-60 installation, barcode workflow integration test with Vinyl Vision Pro",
+                            "Gaahleri Atlantis airbrush booth assembly and airflow safety certification",
+                            "UPLIFT desk ergo configuration and dual-monitor rig build",
+                          ],
+                          milestone: "Lab fully operational — all hardware live and calibrated",
+                        },
+                        {
+                          week: "Week 2",
+                          days: "Days 8–14",
+                          title: "AI Stack Activation & First Production Run",
+                          color: "#00F5FF",
+                          bgColor: "bg-[#00F5FF]/8",
+                          borderColor: "border-[#00F5FF]/25",
+                          tasks: [
+                            "Install and license Autodesk Fusion, nTop, and MIT MechStyle on RTX 5090 workstation",
+                            "Run first local AI inference pipeline — topology optimization test on Impact Driver Holster v1.0",
+                            "Execute first Prusa XL production run: 10x ASA holster prototypes in 'Lights-Out' overnight cycle",
+                            "Complete first Graphtec fleet magnet cut batch using barcode-driven workflow",
+                            "Capture production documentation and photography for B2B pitch assets",
+                          ],
+                          milestone: "First AI-manufactured products in hand — prototype validation complete",
+                        },
+                        {
+                          week: "Week 3",
+                          days: "Days 15–21",
+                          title: "B2B Outreach & Client Acquisition",
+                          color: "#00FF7F",
+                          bgColor: "bg-[#00FF7F]/8",
+                          borderColor: "border-[#00FF7F]/25",
+                          tasks: [
+                            "Launch targeted outreach to local Amish roofing and framing contractors (primary ICP)",
+                            "Present Fleet & Field Branding package — trailer magnets and fleet graphics — to 3 target accounts",
+                            "Deliver Crew Apparel Cycle sample pack (Hotronix 360 IQ printed hats) to 2 construction firms",
+                            "Submit holster samples to 2 job-site managers for field testing feedback",
+                            "Initiate Garage Door Sales Pro client referral pipeline for upsell opportunities",
+                          ],
+                          milestone: "Minimum 2 signed B2B LOIs or purchase orders in hand",
+                        },
+                        {
+                          week: "Week 4",
+                          days: "Days 22–30",
+                          title: "First Fulfillment Cycle & Recurring Revenue Lock-In",
+                          color: "#00FF7F",
+                          bgColor: "bg-[#00FF7F]/6",
+                          borderColor: "border-[#00FF7F]/20",
+                          tasks: [
+                            "Complete first full B2B fulfillment cycle: fleet graphics + crew apparel for signed accounts",
+                            "Invoice Client 1 — Starter Bundle (24 shirts + signage): ~$420 gross",
+                            "Invoice Client 2 — Growth Bundle (48 shirts): ~$545 gross + $340 vinyl add-on",
+                            "Set up monthly recurring order cadence with both clients via Vinyl Vision Pro subscription logic",
+                            "File first OOD progress report: lab operational, first revenue generated, scaling trajectory confirmed",
+                          ],
+                          milestone: "$1,500+ first-month gross — recurring fulfillment cycle established",
+                        },
+                      ].map((step, i) => (
+                        <div key={step.week} className="relative flex gap-5 pb-8 last:pb-0 print-table-row">
+                          {/* Step indicator */}
+                          <div className="relative z-10 flex flex-col items-center shrink-0 no-print" style={{ width: "40px" }}>
+                            <div
+                              className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-xs font-mono border-2 ${step.bgColor} ${step.borderColor}`}
+                              style={{ color: step.color, borderColor: `${step.color}40` }}
+                            >
+                              W{i + 1}
+                            </div>
+                          </div>
+
+                          {/* Content card */}
+                          <div className={`flex-1 rounded-xl border ${step.borderColor} overflow-hidden print-card`} style={{ borderColor: `${step.color}20` }}>
+                            {/* Card header */}
+                            <div className="px-6 py-3 border-b flex items-center justify-between gap-4" style={{ borderColor: `${step.color}15`, backgroundColor: `${step.color}06` }}>
+                              <div className="flex items-center gap-3 flex-wrap">
+                                <span className="text-xs font-mono font-bold px-2.5 py-1 rounded" style={{ color: step.color, backgroundColor: `${step.color}15`, border: `1px solid ${step.color}25` }}>
+                                  {step.week}
+                                </span>
+                                <span className="text-xs font-mono text-muted-foreground print-muted">{step.days}</span>
+                                <h3 className="text-sm font-bold text-foreground">{step.title}</h3>
+                              </div>
+                            </div>
+
+                            {/* Task list */}
+                            <div className="px-6 py-4 space-y-2">
+                              {step.tasks.map((task) => (
+                                <div key={task} className="flex items-start gap-2.5">
+                                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: `${step.color}70` }} />
+                                  <span className="text-xs text-muted-foreground leading-relaxed print-muted">{task}</span>
+                                </div>
+                              ))}
+                            </div>
+
+                            {/* Milestone footer */}
+                            <div className="px-6 py-3 border-t flex items-center gap-2" style={{ borderColor: `${step.color}15`, backgroundColor: `${step.color}04` }}>
+                              <span className="text-xs font-mono font-bold" style={{ color: step.color }}>✦ Milestone:</span>
+                              <span className="text-xs font-semibold text-foreground">{step.milestone}</span>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Immediate ROI callout */}
+                <div className="mx-8 mb-8 rounded-xl border border-[#00F5FF]/30 bg-[#00F5FF]/5 px-6 py-5 flex gap-4 items-start print-card">
+                  <div className="w-1 self-stretch rounded-full bg-[#00F5FF] shrink-0" />
+                  <div>
+                    <span className="text-xs font-mono font-bold text-[#00F5FF] uppercase tracking-widest block mb-2 print-cyan">Immediate ROI — Day 30 Target</span>
+                    <p className="text-sm text-foreground font-medium leading-relaxed">
+                      By Day 30, Napier Labs transitions from R&amp;D to active B2B fulfillment, securing the first{" "}
+                      <span className="text-[#00F5FF] font-bold">$1,500 in recurring monthly revenue</span>.
+                      This is not a projection — it is a direct output of the operational stack activated in Weeks 1–2 and the client relationships initiated in Week 3.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
             {/* Signature / Attestation block */}
             <div className="rounded-2xl border border-[#00F5FF]/20 p-8 print-card print-section">
               <div className="flex items-start gap-4 mb-6">
