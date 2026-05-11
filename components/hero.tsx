@@ -16,11 +16,11 @@ export function Hero() {
           <Image
             src="/napier-labs-logo-v2.png"
             alt="Napier Labs - Cross-Platform iOS and Android Developer"
-            width={400}
-            height={400}
+            width={1024}
+            height={559}
             priority
             loading="eager"
-            className="h-[250px] md:h-[400px] w-auto logo-pulse mix-blend-screen drop-shadow-[0_0_40px_#00F5FF]"
+            className="h-[250px] md:h-[400px] w-auto logo-pulse drop-shadow-[0_0_48px_rgba(0,245,255,0.35)]"
           />
         </div>
 
