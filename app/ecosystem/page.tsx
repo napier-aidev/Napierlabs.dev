@@ -46,7 +46,7 @@ export default function EcosystemPage() {
           <div className="glass-card rounded-full px-6 py-3 flex items-center justify-between">
             <Link href="/" className="flex items-center">
               <Image
-                src="/napier-labs-logo-v2.png"
+                src="/napier-labs-logo.png"
                 alt="Napier Labs"
                 width={74}
                 height={40}

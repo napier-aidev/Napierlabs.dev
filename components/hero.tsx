@@ -14,7 +14,7 @@ export function Hero() {
         {/* Hero Logo - Centerpiece */}
         <div className="mb-[60px]">
           <Image
-            src="/napier-labs-logo-v2.png"
+            src="/napier-labs-logo.png"
             alt="Napier Labs - Cross-Platform iOS and Android Developer"
             width={1024}
             height={559}
