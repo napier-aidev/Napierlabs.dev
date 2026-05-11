@@ -48,9 +48,9 @@ export default function EcosystemPage() {
               <Image
                 src="/napier-labs-logo-v2.png"
                 alt="Napier Labs"
-                width={74}
+                width={40}
                 height={40}
-                className="h-10 w-auto rounded-md drop-shadow-[0_0_12px_rgba(0,245,255,0.25)] hover:drop-shadow-[0_0_18px_rgba(0,245,255,0.4)] transition-all"
+                className="h-10 w-auto mix-blend-screen drop-shadow-[0_0_10px_#00F5FF] hover:drop-shadow-[0_0_15px_#00F5FF] transition-all"
               />
             </Link>
             <div className="hidden md:flex items-center gap-6">
