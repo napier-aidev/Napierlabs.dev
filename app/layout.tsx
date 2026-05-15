@@ -8,9 +8,11 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
-  title: 'Napier Labs | Cross-Platform Native Developer & B2B Brand Architect',
-  description: 'Napier Labs is a premier digital forge specializing in iOS & Android native development, B2B brand identity, and AI-driven business solutions. Led by the Vibe-Smith, we bridge the gap between digital code and physical production.',
-  keywords: 'iOS developer, Android developer, vibe coder, B2B branding, Napier Labs, Cyberboss Studios, Next.js developer, AI automation, custom software, digital fabrication',
+  title: 'Napier Labs | Agentic Engineer · Technology & Design Hub',
+  description:
+    'Napier Labs is an agile technology and design hub building AI-assisted software ecosystems for live entertainment, aquaculture compliance, and industrial workflows. Strategic partnerships for API/SDK validation and hardware integrations.',
+  keywords:
+    'agentic engineer, AI-assisted development, B2B SaaS partnerships, API integration sponsor, Napier Labs, Setlist rip, Pixel Lab, SmartSpec, compliance software, sponsorship',
   robots: 'index, follow',
   authors: [{ name: 'Napier Labs' }],
   creator: 'Napier Labs',
@@ -20,13 +22,15 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://napierlabs.dev',
     siteName: 'Napier Labs',
-    title: 'Napier Labs | Cross-Platform Native Developer & B2B Brand Architect',
-    description: 'Napier Labs is a premier digital forge specializing in iOS & Android native development, B2B brand identity, and AI-driven business solutions. Led by the Vibe-Smith, we bridge the gap between digital code and physical production.',
+    title: 'Napier Labs | Agentic Engineer · Technology & Design Hub',
+    description:
+      'Agile builds and deployment pipelines spanning live entertainment, aquaculture tooling, and industrial compliance—open to strategic partnerships.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Napier Labs | Cross-Platform Native Developer & B2B Brand Architect',
-    description: 'Napier Labs is a premier digital forge specializing in iOS & Android native development, B2B brand identity, and AI-driven business solutions.',
+    title: 'Napier Labs | Agentic Engineer · Technology & Design Hub',
+    description:
+      'Technology and design hub for AI-assisted pipelines, integrations, and B2B partnership opportunities.',
   },
   icons: {
     icon: [

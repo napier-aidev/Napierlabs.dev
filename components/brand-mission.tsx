@@ -1,20 +1,26 @@
-import { Target } from "lucide-react"
+import { Gauge } from "lucide-react"
 
 export function BrandMission() {
   return (
-    <section className="py-24 px-4">
+    <section className="py-16 px-4" aria-label="Build philosophy">
       <div className="max-w-4xl mx-auto">
-        <div className="glass-card glow-border rounded-2xl p-8 md:p-12 text-center">
-          <div className="w-14 h-14 mx-auto mb-6 rounded-xl bg-[#00F5FF]/10 flex items-center justify-center">
-            <Target className="w-7 h-7 text-[#00F5FF]" />
+        <div className="rounded-2xl border border-white/[0.08] bg-[rgba(11,15,25,0.55)] backdrop-blur-xl p-8 md:p-10 text-center shadow-[0_0_40px_rgba(0,200,255,0.04)]">
+          <div className="w-12 h-12 mx-auto mb-5 rounded-xl bg-[#00FF94]/10 flex items-center justify-center border border-[#00FF94]/20">
+            <Gauge className="w-6 h-6 text-[#00FF94]" aria-hidden />
           </div>
-          <span className="text-[#00F5FF] font-mono text-sm mb-4 block">// brand.mission</span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">
-            <span className="text-foreground">Our </span>
-            <span className="text-glow text-[#00F5FF]">Mission</span>
+          <span className="text-[#00C8FF] font-mono text-xs uppercase tracking-[0.2em] mb-3 block">
+            // velocity.standard
+          </span>
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5 text-balance">
+            Ship in <span className="text-glow-dual">real loops</span>, not slide
+            decks.
           </h2>
-          <p className="text-muted-foreground text-lg md:text-xl leading-relaxed text-balance">
-            Napier Labs is a multidisciplinary design and development studio. We build Micro SaaS solutions for the aquatic hobby, sports analytics, and music production. Our ecosystem extends beyond code—we provide high-quality merchandise designed to reflect the culture of the niches we serve.
+          <p className="text-muted-foreground text-base md:text-lg leading-relaxed text-balance">
+            Platforms here are in alpha, beta, and active pipeline phases—not
+            shelf-ware. NapierLabs runs continuous integration, agent-assisted
+            implementation, and staged rollouts so partners engage with software
+            while metrics, APIs, and workloads are still sharpening in
+            production-grade environments.
           </p>
         </div>
       </div>
