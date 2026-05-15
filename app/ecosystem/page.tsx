@@ -46,20 +46,19 @@ export default function EcosystemPage() {
           <div className="glass-card rounded-full px-6 py-3 flex items-center justify-between">
             <Link href="/" className="flex items-center">
               <Image
-                src="/napier-labs-logo-v2.png"
+                src="/napier-labs-logo.png"
                 alt="Napier Labs"
                 width={40}
                 height={40}
-                className="h-10 w-auto mix-blend-screen drop-shadow-[0_0_10px_#00F5FF] hover:drop-shadow-[0_0_15px_#00F5FF] transition-all"
+                className="h-10 w-auto mix-blend-screen rounded-md drop-shadow-[0_0_14px_rgba(0,255,148,0.22)] hover:drop-shadow-[0_0_20px_rgba(0,200,255,0.35)] transition-all"
               />
             </Link>
             <div className="hidden md:flex items-center gap-6">
-              <Link href="/#about" className="text-sm text-muted-foreground hover:text-[#00F5FF] transition-colors">About</Link>
-              <Link href="/#services" className="text-sm text-muted-foreground hover:text-[#00F5FF] transition-colors">Services</Link>
-              <Link href="/#studio" className="text-sm text-muted-foreground hover:text-[#00F5FF] transition-colors">Studio</Link>
-              <Link href="/#projects" className="text-sm text-muted-foreground hover:text-[#00F5FF] transition-colors">Projects</Link>
-              <Link href="/ecosystem" className="text-sm text-[#00F5FF] font-medium">Ecosystem</Link>
-              <Link href="/#contact" className="text-sm text-muted-foreground hover:text-[#00F5FF] transition-colors">Contact</Link>
+              <Link href="/#about" className="text-sm text-muted-foreground hover:text-[#00FF94] transition-colors">About</Link>
+              <Link href="/#projects" className="text-sm text-muted-foreground hover:text-[#00FF94] transition-colors">Pipelines</Link>
+              <Link href="/#partnerships" className="text-sm text-muted-foreground hover:text-[#00FF94] transition-colors">Partnerships</Link>
+              <Link href="/ecosystem" className="text-sm text-[#00C8FF] font-medium">Ecosystem</Link>
+              <Link href="/#contact" className="text-sm text-muted-foreground hover:text-[#00FF94] transition-colors">Contact</Link>
             </div>
           </div>
         </div>
@@ -71,7 +70,7 @@ export default function EcosystemPage() {
           {/* Back link */}
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-[#00F5FF] transition-colors mb-12 font-mono"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-[#00C8FF] transition-colors mb-12 font-mono"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Lab
