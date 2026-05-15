@@ -25,7 +25,8 @@ export function Hero() {
             width={1024}
             height={559}
             priority
-            className="h-[200px] md:h-[360px] w-auto logo-pulse-cyber"
+            loading="eager"
+            className="h-[200px] md:h-[360px] w-auto logo-pulse-cyber mix-blend-screen drop-shadow-[0_0_36px_rgba(0,200,255,0.5)]"
           />
         </div>
 
