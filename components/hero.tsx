@@ -20,10 +20,10 @@ export function Hero() {
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col items-center">
         <div className="mb-10 md:mb-14">
           <Image
-            src="/napier-labs-logo.png"
+            src="/logo-v2.png"
             alt="Napier Labs"
             width={1024}
-            height={559}
+            height={813}
             priority
             loading="eager"
             className="h-[200px] md:h-[360px] w-auto logo-pulse-cyber mix-blend-screen drop-shadow-[0_0_36px_rgba(0,200,255,0.5)]"
