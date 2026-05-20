@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { SITE_LOGO } from "@/lib/site-logo"
 import { Hero } from "@/components/hero"
 import { BrandMission } from "@/components/brand-mission"
 import { About } from "@/components/about"
@@ -17,7 +18,7 @@ export default function Home() {
           <div className="glass-card rounded-full px-6 py-3 flex items-center justify-between">
             <a href="/" className="flex items-center">
               <Image
-                src="/logo-v2.png"
+                src={SITE_LOGO}
                 alt="Napier Labs"
                 width={40}
                 height={40}

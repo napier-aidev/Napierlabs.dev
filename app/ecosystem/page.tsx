@@ -1,6 +1,7 @@
 import { Monitor, Scissors, ShieldCheck, ArrowLeft, Armchair, Barcode, Crosshair, Hand, Terminal, Layers3, Gauge, Wifi, ArrowRight, Anchor, Navigation, Accessibility, Download, Waves, FlaskConical, Droplets, Wind, Paintbrush, FileSearch, AlertTriangle, Video, Eye, Zap, Radio, ShieldAlert, ScanLine } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { SITE_LOGO } from "@/lib/site-logo"
 
 const roadmap = [
   {
@@ -46,7 +47,7 @@ export default function EcosystemPage() {
           <div className="glass-card rounded-full px-6 py-3 flex items-center justify-between">
             <Link href="/" className="flex items-center">
               <Image
-                src="/logo-v2.png"
+                src={SITE_LOGO}
                 alt="Napier Labs"
                 width={40}
                 height={40}

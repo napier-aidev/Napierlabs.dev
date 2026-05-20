@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { ArrowDown, Bot } from "lucide-react"
+import { SITE_LOGO } from "@/lib/site-logo"
 
 export function Hero() {
   return (
@@ -20,7 +21,7 @@ export function Hero() {
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col items-center">
         <div className="mb-10 md:mb-14">
           <Image
-            src="/logo-v2.png"
+            src={SITE_LOGO}
             alt="Napier Labs"
             width={1024}
             height={813}
