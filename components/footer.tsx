@@ -1,5 +1,6 @@
 "use client"
 
+import { supabase } from "@/lib/supabase";
 import { useState } from "react"
 import { Mail, Terminal, Send, AlertCircle } from "lucide-react"
 
@@ -18,35 +19,40 @@ export function Footer() {
   const [errorMessage, setErrorMessage] = useState("")
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitStatus("idle")
-    setErrorMessage("")
-    
+    e.preventDefault();
+    if (isSubmitting) return;
+
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
-      })
-      
-      const data = await response.json()
-      
-      if (response.ok && data.success) {
-        setSubmitStatus("success")
-        setFormData({ name: "", email: "", company: "", projectType: "", timeline: "", budget: "", message: "" })
-      } else {
-        setSubmitStatus("error")
-        setErrorMessage(data.error || "Failed to send message. Please try again.")
-      }
+      setIsSubmitting(true);
+      setUpdateStatus(null);
+
+      // Pushes the form data directly to your Supabase table from the browser
+      const { error } = await supabase
+        .from('inquiries')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            company: formData.company,
+            type: formData.projectType, // Matches the key name from line 11
+            timeline: formData.timeline,
+            budget: formData.budget,
+            message: formData.message,
+          }
+        ]);
+
+      if (error) throw error;
+
+      setUpdateStatus("success");
+      setFormData({ name: "", email: "", company: "", projectType: "", timeline: "", budget: "", message: "" });
+
     } catch (error) {
-      console.error("Form submission error:", error)
-      setSubmitStatus("error")
-      setErrorMessage("Network error. Please check your connection and try again.")
+      console.error("Submission failed:", error);
+      setUpdateStatus("error");
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }))
@@ -180,7 +186,8 @@ export function Footer() {
                     className={selectClasses}
                   >
                     <option value="" disabled>Select budget...</option>
-                    <option value="$2k-$5k">$2k - $5k</option>
+                    <option value="0-2k">$0 - $2k</option>
+                    <option value="2k-5k">$2k - $5k</option>
                     <option value="$5k-$10k">$5k - $10k</option>
                     <option value="$10k+">$10k+</option>
                   </select>
