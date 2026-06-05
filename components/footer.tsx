@@ -19,40 +19,57 @@ export function Footer() {
   const [errorMessage, setErrorMessage] = useState("")
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (isSubmitting) return;
+    e.preventDefault()
+    if (isSubmitting) return
+
+    setIsSubmitting(true)
+    setSubmitStatus("idle")
+    setErrorMessage("")
 
     try {
-      setIsSubmitting(true);
-      setUpdateStatus(null);
+      const { error } = await supabase.from("inquiries").insert([
+        {
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          type: formData.projectType,
+          timeline: formData.timeline,
+          budget: formData.budget,
+          message: formData.message,
+        },
+      ])
 
-      // Pushes the form data directly to your Supabase table from the browser
-      const { error } = await supabase
-        .from('inquiries')
-        .insert([
-          {
-            name: formData.name,
-            email: formData.email,
-            company: formData.company,
-            type: formData.projectType, // Matches the key name from line 11
-            timeline: formData.timeline,
-            budget: formData.budget,
-            message: formData.message,
-          }
-        ]);
+      if (error) throw error
 
-      if (error) throw error;
-
-      setUpdateStatus("success");
-      setFormData({ name: "", email: "", company: "", projectType: "", timeline: "", budget: "", message: "" });
-
+      setSubmitStatus("success")
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        projectType: "",
+        timeline: "",
+        budget: "",
+        message: "",
+      })
     } catch (error) {
-      console.error("Submission failed:", error);
-      setUpdateStatus("error");
+      console.error("Submission failed:", error)
+      setSubmitStatus("error")
+      const fallback =
+        "Failed to send message. Please try again or email hello@napierlabs.dev."
+      const detail =
+        error instanceof Error
+          ? error.message
+          : typeof error === "object" &&
+              error !== null &&
+              "message" in error &&
+              typeof (error as { message: unknown }).message === "string"
+            ? (error as { message: string }).message
+            : fallback
+      setErrorMessage(detail || fallback)
     } finally {
-      setIsSubmitting(false);
+      setIsSubmitting(false)
     }
-  };
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }))
@@ -188,8 +205,8 @@ export function Footer() {
                     <option value="" disabled>Select budget...</option>
                     <option value="0-2k">$0 - $2k</option>
                     <option value="2k-5k">$2k - $5k</option>
-                    <option value="$5k-$10k">$5k - $10k</option>
-                    <option value="$10k+">$10k+</option>
+                    <option value="5k-10k">$5k - $10k</option>
+                    <option value="10k+">$10k+</option>
                   </select>
                 </div>
               </div>
