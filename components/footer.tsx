@@ -1,5 +1,6 @@
 "use client"
 
+import { supabase } from "@/lib/supabase";
 import { useState } from "react"
 import { Mail, Terminal, Send, AlertCircle } from "lucide-react"
 
@@ -19,30 +20,52 @@ export function Footer() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (isSubmitting) return
+
     setIsSubmitting(true)
     setSubmitStatus("idle")
     setErrorMessage("")
-    
+
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
+      const { error } = await supabase.from("inquiries").insert([
+        {
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          type: formData.projectType,
+          timeline: formData.timeline,
+          budget: formData.budget,
+          message: formData.message,
+        },
+      ])
+
+      if (error) throw error
+
+      setSubmitStatus("success")
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        projectType: "",
+        timeline: "",
+        budget: "",
+        message: "",
       })
-      
-      const data = await response.json()
-      
-      if (response.ok && data.success) {
-        setSubmitStatus("success")
-        setFormData({ name: "", email: "", company: "", projectType: "", timeline: "", budget: "", message: "" })
-      } else {
-        setSubmitStatus("error")
-        setErrorMessage(data.error || "Failed to send message. Please try again.")
-      }
     } catch (error) {
-      console.error("Form submission error:", error)
+      console.error("Submission failed:", error)
       setSubmitStatus("error")
-      setErrorMessage("Network error. Please check your connection and try again.")
+      const fallback =
+        "Failed to send message. Please try again or email hello@napierlabs.dev."
+      const detail =
+        error instanceof Error
+          ? error.message
+          : typeof error === "object" &&
+              error !== null &&
+              "message" in error &&
+              typeof (error as { message: unknown }).message === "string"
+            ? (error as { message: string }).message
+            : fallback
+      setErrorMessage(detail || fallback)
     } finally {
       setIsSubmitting(false)
     }
@@ -180,9 +203,10 @@ export function Footer() {
                     className={selectClasses}
                   >
                     <option value="" disabled>Select budget...</option>
-                    <option value="$2k-$5k">$2k - $5k</option>
-                    <option value="$5k-$10k">$5k - $10k</option>
-                    <option value="$10k+">$10k+</option>
+                    <option value="0-2k">$0 - $2k</option>
+                    <option value="2k-5k">$2k - $5k</option>
+                    <option value="5k-10k">$5k - $10k</option>
+                    <option value="10k+">$10k+</option>
                   </select>
                 </div>
               </div>
