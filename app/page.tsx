@@ -35,9 +35,6 @@ export default function Home() {
               <a href="#partnerships" className={navLinkClass}>
                 Partnerships
               </a>
-              <a href="/ecosystem" className={navLinkClass}>
-                Ecosystem
-              </a>
               <span className="text-sm text-muted-foreground/50 cursor-default group relative">
                 Merch
                 <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs font-mono text-[#00C8FF] opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">

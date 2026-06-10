@@ -466,10 +466,6 @@ export default function OodJustificationPage() {
                   <strong>3D Manufacturing Case Study (Impact Driver Holster):</strong>{" "}
                   <span className="font-mono">napierlabs.dev/#projects</span>
                 </li>
-                <li>
-                  <strong>Full Ecosystem &amp; Hardware Audit:</strong>{" "}
-                  <span className="font-mono">napierlabs.dev/ecosystem</span>
-                </li>
               </ul>
             </div>
 
@@ -837,12 +833,6 @@ export default function OodJustificationPage() {
                 <FileText className="w-4 h-4" />
                 Print / Save as PDF
               </button>
-              <Link
-                href="/ecosystem"
-                className="text-xs font-mono text-muted-foreground hover:text-[#00F5FF] transition-colors"
-              >
-                View Full Ecosystem →
-              </Link>
             </div>
 
           </div>

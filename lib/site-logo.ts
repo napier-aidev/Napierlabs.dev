@@ -7,7 +7,7 @@ import siteLogoImage from "@/public/logo-v2.png"
  */
 export const SITE_LOGO: StaticImageData = siteLogoImage
 
-/** String path for public/logo-v2.png — site-root absolute (not ./) so /ecosystem resolves correctly */
+/** String path for public/logo-v2.png — site-root absolute (not ./) so nested routes resolve correctly */
 export function siteLogoPath(): string {
   const base = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
   const normalizedBase = base.endsWith("/") ? base.slice(0, -1) : base

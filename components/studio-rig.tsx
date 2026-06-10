@@ -1,7 +1,6 @@
 "use client"
 
-import { Laptop, Smartphone, Keyboard, ArrowUpRight } from "lucide-react"
-import Link from "next/link"
+import { Laptop, Smartphone, Keyboard } from "lucide-react"
 
 const currentGear = [
   {
@@ -78,23 +77,6 @@ export function StudioRig() {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* 2026 Roadmap CTA */}
-        <div className="glass-card rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 border border-[#00F5FF]/15">
-          <div>
-            <p className="text-sm font-mono text-[#00F5FF] mb-1">// 2026.hardware.roadmap</p>
-            <p className="text-muted-foreground text-sm text-balance">
-              Puget Systems RTX 5090, Graphtec CE8000-60, Gaahleri Waterfall Booth & UPLIFT Commercial Desk — all pre-optimized for our AI software stack.
-            </p>
-          </div>
-          <Link
-            href="/ecosystem"
-            className="inline-flex items-center gap-2 bg-[#00F5FF] text-[#141b2d] px-6 py-3 rounded-lg font-bold text-sm hover:bg-[#00F5FF]/90 transition-all duration-300 glow-border whitespace-nowrap shrink-0"
-          >
-            View Full 2026 Roadmap
-            <ArrowUpRight className="w-4 h-4" />
-          </Link>
         </div>
 
       </div>
