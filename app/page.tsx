@@ -1,10 +1,13 @@
 import Image from "next/image"
+import { Suspense } from "react"
 import { SITE_LOGO } from "@/lib/site-logo"
 import { Hero } from "@/components/hero"
 import { BrandMission } from "@/components/brand-mission"
 import { About } from "@/components/about"
 import { ActivePipelines } from "@/components/active-pipelines"
-import { Partnerships } from "@/components/partnerships"
+import { PartnersSponsors } from "@/components/PartnersSponsors"
+import { ServicesPricing } from "@/components/ServicesPricing"
+import { ShopGrid } from "@/components/ShopGrid"
 import { Footer } from "@/components/footer"
 
 const navLinkClass =
@@ -26,26 +29,23 @@ export default function Home() {
               />
             </a>
             <div className="hidden md:flex items-center gap-6">
-              <a href="#about" className={navLinkClass}>
-                About
+              <a href="#services" className={navLinkClass}>
+                Services &amp; Pricing
               </a>
               <a href="#projects" className={navLinkClass}>
-                Pipelines
+                Apps
               </a>
-              <a href="#partnerships" className={navLinkClass}>
-                Partnerships
+              <a href="#shop" className={navLinkClass}>
+                Shop
               </a>
-              <span className="text-sm text-muted-foreground/50 cursor-default group relative">
-                Merch
-                <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs font-mono text-[#00C8FF] opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                  Coming Soon
-                </span>
-              </span>
+              <a href="#partners" className={navLinkClass}>
+                Partners &amp; Sponsors
+              </a>
               <a
                 href="#contact"
-                className="text-sm text-[#00FF94] font-medium hover:text-[#00C8FF] transition-colors"
+                className="text-sm font-semibold text-[#0B0F19] bg-[#00FF94] hover:brightness-110 rounded-full px-4 py-2 transition-all shadow-[0_0_18px_rgba(0,255,148,0.25)]"
               >
-                Contact
+                Contact Us
               </a>
             </div>
           </div>
@@ -54,11 +54,15 @@ export default function Home() {
 
       <main>
         <Hero />
+        <ServicesPricing />
         <BrandMission />
         <ActivePipelines />
-        <Partnerships />
+        <PartnersSponsors />
+        <ShopGrid />
         <About />
-        <Footer />
+        <Suspense fallback={null}>
+          <Footer />
+        </Suspense>
       </main>
     </div>
   )

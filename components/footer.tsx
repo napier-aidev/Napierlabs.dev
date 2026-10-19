@@ -1,8 +1,9 @@
 "use client"
 
-import { supabase } from "@/lib/supabase";
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { useSearchParams } from "next/navigation"
 import { Mail, Terminal, Send, AlertCircle } from "lucide-react"
+import { getServiceInquiry } from "@/lib/inquiry"
 
 export function Footer() {
   const [formData, setFormData] = useState({
@@ -12,13 +13,30 @@ export function Footer() {
     projectType: "",
     timeline: "",
     budget: "",
-    message: ""
+    message: "",
+    _gotcha: ""
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
   const [errorMessage, setErrorMessage] = useState("")
+  const searchParams = useSearchParams()
+  const service = searchParams.get("service")
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  useEffect(() => {
+    const preset = getServiceInquiry(service)
+    if (!preset) return
+
+    setSubmitStatus("idle")
+    setFormData((prev) => ({
+      ...prev,
+      projectType: preset.projectType,
+      budget: preset.budget,
+      message: preset.message,
+    }))
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+  }, [service])
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (isSubmitting) return
 
@@ -27,21 +45,31 @@ export function Footer() {
     setErrorMessage("")
 
     try {
-      const { error } = await supabase.from("inquiries").insert([
-        {
-          name: formData.name,
-          email: formData.email,
-          company: formData.company,
-          type: formData.projectType,
-          timeline: formData.timeline,
-          budget: formData.budget,
-          message: formData.message,
-        },
-      ])
+      // Read directly from the HTML inputs to avoid state typos
+      const target = e.currentTarget;
+      const formSubmissionData = new FormData(target);
 
-      if (error) throw error
+      const response = await fetch("https://formspree.io/f/xqeodqyy", {
+        method: "POST",
+        body: formSubmissionData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => null)
+        const formspreeError =
+          data && Array.isArray(data.errors)
+            ? data.errors.map((err: { message: string }) => err.message).join(", ")
+            : undefined
+        throw new Error(formspreeError || "Failed to send message.")
+      }
 
       setSubmitStatus("success")
+
+      // Reset the form values
+      target.reset();
       setFormData({
         name: "",
         email: "",
@@ -50,21 +78,13 @@ export function Footer() {
         timeline: "",
         budget: "",
         message: "",
+        _gotcha: "",
       })
     } catch (error) {
       console.error("Submission failed:", error)
       setSubmitStatus("error")
-      const fallback =
-        "Failed to send message. Please try again or email hello@napierlabs.dev."
-      const detail =
-        error instanceof Error
-          ? error.message
-          : typeof error === "object" &&
-              error !== null &&
-              "message" in error &&
-              typeof (error as { message: unknown }).message === "string"
-            ? (error as { message: string }).message
-            : fallback
+      const fallback = "Failed to send message. Please try again or email hello@napierlabs.dev."
+      const detail = error instanceof Error ? error.message : fallback
       setErrorMessage(detail || fallback)
     } finally {
       setIsSubmitting(false)
@@ -113,6 +133,18 @@ export function Footer() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6">
+              {/* Formspree honeypot — hidden from humans, bots fill it and get filtered */}
+              <input
+                type="text"
+                name="_gotcha"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                value={formData._gotcha}
+                onChange={handleChange}
+                className="hidden"
+                style={{ display: "none" }}
+              />
               {submitStatus === "error" && (
                 <div className="flex items-center gap-3 p-4 rounded-lg bg-red-500/10 border border-red-500/30">
                   <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0" />
@@ -169,6 +201,10 @@ export function Footer() {
                     className={selectClasses}
                   >
                     <option value="" disabled>Select type...</option>
+                    <option value="Starter Digital & Identity">Starter Digital & Identity</option>
+                    <option value="Growth & Custom Merch">Growth & Custom Merch</option>
+                    <option value="Custom Software & Systems">Custom Software & Systems</option>
+                    <option value="Private 1-on-1 Retainer">Private 1-on-1 Retainer</option>
                     <option value="Partnership / Sponsorship">Partnership / Sponsorship</option>
                     <option value="API / SDK / Integration">API / SDK / Integration</option>
                     <option value="Hardware Validation">Hardware Validation</option>

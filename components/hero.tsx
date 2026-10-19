@@ -31,37 +31,34 @@ export function Hero() {
           />
         </div>
 
-        <p className="inline-flex items-center gap-2 text-xs md:text-sm font-mono uppercase tracking-[0.25em] text-[#00FF94] mb-5">
-          <Bot className="w-4 h-4" aria-hidden />
-          Agentic Engineer
+        <p className="inline-flex items-center justify-center gap-2 text-xs md:text-sm font-mono uppercase tracking-[0.25em] text-[#00FF94] mb-5 max-w-full text-center">
+          <Bot className="w-4 h-4 shrink-0" aria-hidden />
+          Digital Solutions &amp; Custom Branding
         </p>
 
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 text-balance leading-[1.15]">
-          <span className="text-glow-dual">Limitless Capability.</span>
-          <br />
-          <span className="text-foreground">High-Velocity Execution.</span>
+          <span className="text-glow-dual">
+            We build modern websites, apps, and custom merchandise that grow your business.
+          </span>
         </h1>
 
         <p className="text-base md:text-xl text-muted-foreground mb-12 max-w-3xl mx-auto text-balance leading-relaxed">
-          NapierLabs is an agile technology and design firm pioneering advanced,
-          AI-assisted development workflows. As an Agentic Engineer, I leverage
-          cutting-edge AI architectures to build, deploy, and scale custom
-          software ecosystems at a pace traditional workflows can&apos;t match.
+          Whether you are an established company needing custom software and branding, or a local business looking for a clean website and physical merchandise, we deliver high-end tech without agency markups. Built primarily for B2B, with select 1-on-1 private clients.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
           <a
-            href="#partnerships"
+            href="#services"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 font-semibold text-[#0B0F19] bg-gradient-to-r from-[#00FF94] to-[#00C8FF] hover:brightness-110 transition-all duration-300 shadow-[0_0_28px_rgba(0,200,255,0.22)] border border-white/10"
           >
-            Partner With Us
+            View Services &amp; Pricing
           </a>
           <a
-            href="#projects"
+            href="#shop"
             className="w-full sm:w-auto group rounded-xl px-8 py-4 font-medium border border-[#00FF94]/35 bg-[rgba(11,15,25,0.6)] backdrop-blur-md text-foreground hover:border-[#00C8FF]/50 hover:bg-[rgba(15,22,38,0.85)] transition-all duration-300 flex items-center justify-center gap-2"
           >
             <span className="group-hover:text-[#00C8FF] transition-colors">
-              Active Pipelines
+              Browse Shop
             </span>
             <ArrowDown className="w-4 h-4 text-[#00FF94] group-hover:translate-y-1 transition-transform" />
           </a>
